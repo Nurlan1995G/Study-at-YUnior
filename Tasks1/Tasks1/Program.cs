@@ -12,15 +12,15 @@ namespace Tasks    // Задача    Попрактикуйтесь в созд
         static void Main(string[] args)
         {
             string nameCompany = "Афон";
-            uint staffCount = 1200;  // количество сотрудников
-            float avarageSalary = 31.5f; // средняя зарплата
-            byte transactionsWeek = 146;    //выполнено операций за неделю
-            long annualRevenue = 50002000021;  //годовая выручка
-            char companySimbols = 'A';   //символ компании
-            int productCount = 12500;   //количество продукта на продажу
-            short planMonth = 1500;   //план операций на месяц
-            bool planToPerform;   // выполнят ли план
-            double companyDividends = 2300430000.000;  //дивиденды компании
+            uint staffCount = 1200;
+            float avarageSalary = 31.5f; 
+            byte transactionsWeek = 146;    
+            long annualRevenue = 50002000021;  
+            char companySimbols = 'A';  
+            int productCount = 12500;   
+            short planMonth = 1500;   
+            bool isBigCompany;   
+            double companyDividends = 2300430000.000;  
         }
     }
 }
