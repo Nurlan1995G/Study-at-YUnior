@@ -2,25 +2,26 @@
 using System.Collections.Generic;
 
 
-namespace Tasks    // Задача    Попрактикуйтесь в создании переменных, объявить 10 переменных разных типов.
-                   //Напоминание: переменные именуются с маленькой буквы, если название состоит из нескольких слов,
-                   //то комбинируем их следующим образом - названиеПеременной.
-                   //Также имя всегда должно отражать суть того, что хранит переменная.
+namespace Tasks    
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string nameCompany = "Афон";
-            uint staffCount = 1200;
-            float avarageSalary = 31.5f; 
-            byte transactionsWeek = 146;    
-            long annualRevenue = 50002000021;  
-            char companySimbols = 'A';  
-            int productsCount = 12500;   
-            short planMonth = 1500;   
-            bool isBigCompany;   
-            double companyDividends = 2300430000.000;  
+            int gold;           //золото
+            int crystalPrice = 5;   //цена кристалла
+            int crystalCount;
+
+           Console.WriteLine("Доброго времени суток, стоимость одного кристалла равна " + crystalPrice + 
+               " золота");
+            Console.Write("Введите, сколько у вас золота: ");
+            gold = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Сколько кристаллов вы хотите приобрести? ");
+            crystalCount = Convert.ToInt32(Console.ReadLine());
+
+            gold -= crystalCount * crystalPrice;
+
+            Console.WriteLine("У вас в ящике находится " + crystalCount + " кристалла и " + gold + " золота");
         }
     }
 }
