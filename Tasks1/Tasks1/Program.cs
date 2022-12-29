@@ -8,8 +8,8 @@ namespace Tasks
     {
         static void Main(string[] args)
         {
-            int gold;           //золото
-            int crystalPrice = 5;   //цена кристалла
+            int gold;           
+            int crystalPrice = 5;  
             int crystalCount;
 
            Console.WriteLine("Доброго времени суток, стоимость одного кристалла равна " + crystalPrice + 
