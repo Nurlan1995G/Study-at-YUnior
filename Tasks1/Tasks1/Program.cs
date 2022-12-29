@@ -17,7 +17,7 @@ namespace Tasks    // Задача    Попрактикуйтесь в созд
             byte transactionsWeek = 146;    
             long annualRevenue = 50002000021;  
             char companySimbols = 'A';  
-            int productCount = 12500;   
+            int productsCount = 12500;   
             short planMonth = 1500;   
             bool isBigCompany;   
             double companyDividends = 2300430000.000;  
