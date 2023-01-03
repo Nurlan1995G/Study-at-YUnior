@@ -1,12 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
-
-namespace TaskCart             //Легенда: Вы приходите в магазин и хотите купить за своё золото кристаллы.
-                               //В вашем кошельке есть какое-то количество золота, продавец спрашивает у вас,
-                               //сколько кристаллов вы хотите купить? После сделки у вас остаётся какое-то количество золота и появляется какое-то количество кристаллов.
+namespace Tasks        
 {
-
-    class Task
+    class Program
     {
         static void Main(string[] args)
         {
@@ -18,10 +15,10 @@ namespace TaskCart             //Легенда: Вы приходите в ма
                 + crystalPrice + " золота");
             Console.Write("Ваша корзина пуста. Введите, сколько у вас золота: ");
             gold = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Сколько кристаллов вы хотите приобрести? ");
+            Console.Write("Сколько кристаллов вы хотите купить? ");
             crystalsCount = Convert.ToInt32(Console.ReadLine());
             gold -= crystalsCount * crystalPrice;
-            Console.WriteLine("У вас в корзине находится " + crystalsCount + " кристалла и " + gold + " золота");
+            Console.WriteLine("У вас в корзине находится " + crystalsCount + " кристалла и осталось " + gold + " золота");
         }
     }
 }
