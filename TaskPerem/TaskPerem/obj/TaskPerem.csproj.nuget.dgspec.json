@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Unity Ucheba, Game 3d\\Tasks1\\Tasks1\\Tasks1.csproj": {}
+    "D:\\Unity Ucheba, Game 3d\\TaskPerem\\TaskPerem\\TaskPerem.csproj": {}
   },
   "projects": {
-    "D:\\Unity Ucheba, Game 3d\\Tasks1\\Tasks1\\Tasks1.csproj": {
+    "D:\\Unity Ucheba, Game 3d\\TaskPerem\\TaskPerem\\TaskPerem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Unity Ucheba, Game 3d\\Tasks1\\Tasks1\\Tasks1.csproj",
-        "projectName": "Tasks1",
-        "projectPath": "D:\\Unity Ucheba, Game 3d\\Tasks1\\Tasks1\\Tasks1.csproj",
+        "projectUniqueName": "D:\\Unity Ucheba, Game 3d\\TaskPerem\\TaskPerem\\TaskPerem.csproj",
+        "projectName": "TaskPerem",
+        "projectPath": "D:\\Unity Ucheba, Game 3d\\TaskPerem\\TaskPerem\\TaskPerem.csproj",
         "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-        "outputPath": "D:\\Unity Ucheba, Game 3d\\Tasks1\\Tasks1\\obj\\",
+        "outputPath": "D:\\Unity Ucheba, Game 3d\\TaskPerem\\TaskPerem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
