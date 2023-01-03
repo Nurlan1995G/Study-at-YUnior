@@ -14,16 +14,14 @@ namespace TaskCart             //Легенда: Вы приходите в ма
             int crystalPrice = 5;
             int crystalsCount;
 
-            Console.WriteLine("Доброго времени суток, стоимость одного кристалла равна " + crystalPrice +
-                " золота");
-            Console.Write("Введите, сколько у вас золота: ");
+            Console.WriteLine("Добро пожаловать! В нашем магазине стоимость одного кристалла равна "
+                + crystalPrice + " золота");
+            Console.Write("Ваша корзина пуста. Введите, сколько у вас золота: ");
             gold = Convert.ToInt32(Console.ReadLine());
             Console.Write("Сколько кристаллов вы хотите приобрести? ");
             crystalsCount = Convert.ToInt32(Console.ReadLine());
-
             gold -= crystalsCount * crystalPrice;
-
-            Console.WriteLine("У вас в ящике находится " + crystalsCount + " кристалла и " + gold + " золота");
+            Console.WriteLine("У вас в корзине находится " + crystalsCount + " кристалла и " + gold + " золота");
         }
     }
 }
