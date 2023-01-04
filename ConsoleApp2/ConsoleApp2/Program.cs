@@ -7,15 +7,16 @@ namespace TaskC
     {
         static void Main(string[] args)
         {
+            int hoursTimeCount = 60;
             int patientsCount;  
             int inspectionTime = 10; 
             int expectationTime;
             Console.Write("Введите количество пациентов: ");
             patientsCount = Convert.ToInt32(Console.ReadLine());
             expectationTime = patientsCount * inspectionTime;
-            int chas = expectationTime / 60;
-            int min = expectationTime % 60;
-            Console.WriteLine($"Вы должны отстоять в очереди {chas} часа {min} минут");
+            int waitingHours = expectationTime / hoursTimeCount;
+            int waitingMinutes = expectationTime % hoursTimeCount;
+            Console.WriteLine($"Вы должны отстоять в очереди {waitingHours} часа {waitingMinutes} минут");
         }
     }
 }
