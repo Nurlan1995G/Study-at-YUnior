@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiclesTask", "CiclesTask\CiclesTask.csproj", "{A115C0A0-896E-40FD-A178-CE485017AB68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A115C0A0-896E-40FD-A178-CE485017AB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A115C0A0-896E-40FD-A178-CE485017AB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A115C0A0-896E-40FD-A178-CE485017AB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A115C0A0-896E-40FD-A178-CE485017AB68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BBC9013-A5DA-4A2E-9C3E-83DDFA0AB751}
+	EndGlobalSection
+EndGlobal
