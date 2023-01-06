@@ -6,10 +6,10 @@ namespace SequenceCycles
     {
         static void Main(string[] args)
         {
-            int weightproducts = 100;
-            int enumeration = 7;
+            int weightProducts = 100;
+            int enumProducts = 7;
 
-            for(int i = 5; i < weightproducts; i+= enumeration)
+            for(int i = 5; i < weightProducts; i+= enumProducts)
                 Console.WriteLine(i);
         }
     }
