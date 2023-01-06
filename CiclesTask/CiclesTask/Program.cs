@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CiclesTask
+namespace CyclesTask
 {
     class Task           
     {
