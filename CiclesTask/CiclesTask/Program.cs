@@ -16,6 +16,7 @@ namespace CyclesTask
             textToPrint = Console.ReadLine();
             Console.Write("Введите сколько раз нужно вывести текст: ");
             repeatData = Convert.ToInt32(Console.ReadLine());
+
             for(int i = 0; i < repeatData; i++)
                 Console.WriteLine(textToPrint);
         }
