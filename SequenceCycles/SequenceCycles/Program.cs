@@ -2,15 +2,16 @@
 
 namespace SequenceCycles
 {
-    class Cycles        
+    class Cycles         
     {
         static void Main(string[] args)
         {
-            int weightProducts = 100;
-            int enumProducts = 7;
+            int wateringCactusWater = 96;   
+            int wateringPeriod = 7;   
+            int wateringBegining = 5;
 
-            for(int i = 5; i < weightProducts; i+= enumProducts)
-                Console.WriteLine(i);
+            for(int i = wateringBegining; i <= wateringCactusWater; i+= wateringPeriod)
+                Console.WriteLine($"Поливать кактус водой в указанные дни {i}");
         }
     }
 }
