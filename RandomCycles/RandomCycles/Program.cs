@@ -25,7 +25,6 @@ namespace RandonCycles
             }
             Console.WriteLine($"Рандомное число выпало {numberRand}");
             Console.WriteLine($"Сумма чисел кратной {numberMultiple} = {numbersSum}");
-
         }
     }
 }
