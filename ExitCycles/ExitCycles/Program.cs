@@ -6,28 +6,29 @@ namespace ExitCycles
     {
         static void Main(string[] args)  
         {
-            int orderKitchensProducts;   
-            string keyWord;
+            int orderKitchensProducts = 1;   
+            string keyWordExit = "exit";
             string companyOrderOnline = "Amar";
+            int userInput;
+            bool isKeyWordExit = true;
 
             Console.WriteLine($"Добро пожаловать в интернет магазин {companyOrderOnline} - все для кухни!");
             Console.WriteLine("Для предотвращения покупок, введите ключевое слово - exit");
             Console.Write("Введите, сколько вы хотите приобрести товара: ");
-             orderKitchensProducts = Convert.ToInt32(Console.ReadLine());
-          
+            userInput = Convert.ToInt32(Console.ReadLine());
 
-            while (true)
+            while (isKeyWordExit)
             {
+                userInput += orderKitchensProducts;
                 Console.Write("Введите слово exit, если хотите выйти: ");
-                keyWord = Console.ReadLine();
-                Console.WriteLine($"Вы приобрели {orderKitchensProducts++} товара");
-                Console.ReadKey();
-                
-                if (keyWord == "exit")
-                {
-                    Console.Write("Вы вышли из программы!");
-                    break;
-                }
+                keyWordExit = Console.ReadLine();
+                Console.WriteLine($"Вы приобрели {userInput} товара");
+
+               if (keyWordExit == "exit")
+               { 
+                   Console.Write("Вы вышли из программы!");
+                   break;
+               }
             }
         }
     }
