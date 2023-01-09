@@ -9,7 +9,6 @@ namespace ExitCycles
             int orderKitchensProducts;   
             string keyWord;
             string companyOrderOnline = "Amar";
-            bool isKeyWord = false;
 
             Console.WriteLine($"Добро пожаловать в интернет магазин {companyOrderOnline} - все для кухни!");
             Console.WriteLine("Для предотвращения покупок, введите ключевое слово - exit");
