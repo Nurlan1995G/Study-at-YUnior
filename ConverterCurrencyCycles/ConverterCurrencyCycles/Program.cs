@@ -6,13 +6,18 @@ namespace ConverterCurrencyCycles
     {
         static void Main(string[] args)
         {
-            float rubToUsd = 64, usdToRub = 66, rubToEur = 67, eurToRub = 70, eurToUsd = 1.2f, usdToEur = 0.9f;
+            float rubToUsd = 64;
+            float usdToRub = 66;
+            float rubToEur = 67;
+            float eurToRub = 70;
+            float eurToUsd = 1.2f;
+            float usdToEur = 0.9f;
             float rub, usd, eur;
             float currencyCount;
             string userInputExit;
             string keyWorkExit = "exit";
             int userInput;
-            bool isCalculationsCurrency = true;
+            bool isProgramWorks = true;
             int conditionsExchanger1 = 1;
             int conditionsExchanger2 = 2;
             int conditionsExchanger3 = 3;
@@ -28,16 +33,16 @@ namespace ConverterCurrencyCycles
             Console.Write("Введите сколько у вас евро: ");
             eur = Convert.ToInt32(Console.ReadLine());
 
-            while (isCalculationsCurrency)
+            while (isProgramWorks)
             {
                 Console.WriteLine("Чтобы произвести операцию, введите число с нужной вам операцией!");
-                Console.WriteLine("1 - обменять рубли в доллары");
-                Console.WriteLine("2 - обменять доллары в рубли");
-                Console.WriteLine("3 - обменять рубли в евро");
-                Console.WriteLine("4 - обменять евро в рубли");
-                Console.WriteLine("5 - обменять евро в доллары");
-                Console.WriteLine("6 - обменять доллары в евро");
-                Console.Write("Для завершении программы, введите слово - exit: ");
+                Console.WriteLine($"{conditionsExchanger1} - обменять рубли в доллары");
+                Console.WriteLine($"{conditionsExchanger2} - обменять доллары в рубли");
+                Console.WriteLine($"{conditionsExchanger3} - обменять рубли в евро");
+                Console.WriteLine($"{conditionsExchanger4} - обменять евро в рубли");
+                Console.WriteLine($"{conditionsExchanger5} - обменять евро в доллары");
+                Console.WriteLine($"{conditionsExchanger6} - обменять доллары в евро");
+                Console.Write($"Для завершении программы, введите слово - {keyWorkExit}: ");
                 userInputExit = Console.ReadLine();
                 Console.Write("Введите номер операции: ");
                 userInput = Convert.ToInt32(Console.ReadLine());
@@ -45,13 +50,14 @@ namespace ConverterCurrencyCycles
                 if (userInputExit == keyWorkExit)
                 {
                     Console.WriteLine("Вы завершили работу программы!");
-                    isCalculationsCurrency = false;
+                    isProgramWorks = false;
                 }
                 else if (userInput == conditionsExchanger1)
                 {
                     Console.WriteLine($"{conditionsExchanger1} - обменять рубли в доллары");
                     Console.Write("Сколько вы хотите обменять: ");
                     currencyCount = Convert.ToInt32(Console.ReadLine());
+
                     if (rub >= currencyCount)
                     {
                         rub -= currencyCount;
@@ -67,6 +73,7 @@ namespace ConverterCurrencyCycles
                     Console.WriteLine($"{conditionsExchanger2} - обменять доллары в рубли");
                     Console.Write("Сколько вы хотите обменять: ");
                     currencyCount = Convert.ToInt32(Console.ReadLine());
+
                     if (usd >= currencyCount)
                     {
                         usd -= currencyCount;
@@ -82,6 +89,7 @@ namespace ConverterCurrencyCycles
                     Console.WriteLine($"{conditionsExchanger3} - обменять рубли в евро");
                     Console.Write("Сколько вы хотите обменять: ");
                     currencyCount = Convert.ToInt32(Console.ReadLine());
+
                     if (rub >= currencyCount)
                     {
                         rub -= currencyCount;
@@ -97,6 +105,7 @@ namespace ConverterCurrencyCycles
                     Console.WriteLine($"{conditionsExchanger4} - обменять евро в рубли");
                     Console.Write("Сколько вы хотите обменять: ");
                     currencyCount = Convert.ToInt32(Console.ReadLine());
+
                     if (eur >= currencyCount)
                     {
                         eur -= currencyCount;
@@ -112,6 +121,7 @@ namespace ConverterCurrencyCycles
                     Console.WriteLine($"{conditionsExchanger5} - обменять евро в доллары");
                     Console.Write("Сколько вы хотите обменять: ");
                     currencyCount = Convert.ToInt32(Console.ReadLine());
+
                     if (eur >= currencyCount)
                     {
                         eur -= currencyCount;
@@ -127,6 +137,7 @@ namespace ConverterCurrencyCycles
                     Console.WriteLine($"{conditionsExchanger6} - обменять доллары в евро");
                     Console.Write("Сколько вы хотите обменять: ");
                     currencyCount = Convert.ToInt32(Console.ReadLine());
+
                     if (usd >= currencyCount)
                     {
                         usd -= currencyCount;
@@ -137,6 +148,7 @@ namespace ConverterCurrencyCycles
                         Console.WriteLine("У вас недостаточно средств");
                     }
                 }
+
                 Console.WriteLine($"У вас на счету {rub} рублей, {usd} долларов, {eur} евро.");
             }
         }
