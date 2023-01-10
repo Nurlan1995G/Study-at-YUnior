@@ -10,7 +10,7 @@ namespace ExitCycles
             int numberOrder;
             string keyWordExit = "exit";
             string companyOrderOnline = "Amar";
-            string userInput;
+            string userInputExit;
             bool isProgramWorks = true;
 
             Console.WriteLine($"Добро пожаловать в интернет магазин {companyOrderOnline} - все для кухни!");
@@ -22,10 +22,10 @@ namespace ExitCycles
             {
                 numberOrder += orderKitchensProducts;
                 Console.Write("Введите слово exit, если хотите выйти: ");
-                userInput = Console.ReadLine();
+                userInputExit = Console.ReadLine();
                 Console.WriteLine($"Вы приобрели {numberOrder} товара");
 
-               if (userInput == keyWordExit)
+               if (userInputExit == keyWordExit)
                {
                     Console.Write("Вы вышли из программы!");
                     break;
