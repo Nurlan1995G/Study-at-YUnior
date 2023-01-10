@@ -28,7 +28,7 @@ namespace ExitCycles
                if (userInputExit == keyWordExit)
                {
                     Console.Write("Вы вышли из программы!");
-                    break;
+                    isProgramWorks = false;
                }
             }
         }
