@@ -40,7 +40,6 @@
                 {
                     Console.WriteLine("Вы вели верный пароль!");
                     Console.WriteLine($"Здравствуйте {userInputName}, вы выполнили вход в ваш личный кабинет.");
-
                     Console.WriteLine($"Заказ: ");
                     Console.Write($"{orderPurchasePizzas} - пиццы: ");
                     Console.Write($"{orderPurchaseSnacks} - закуски: ");
