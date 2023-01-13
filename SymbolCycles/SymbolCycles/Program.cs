@@ -7,25 +7,30 @@ namespace CyclesSymbol
         static void Main(string[] args)
         {
             string userInputName;
-            var userInputSymbol = "";
-            int x;
-            int y;
-            int lenghtString;
-            int userInputN;
+            string userInputSymbol;
+            int beforyName = 1;
+            int afterName = 3;
+            int averageValue = 2;
 
-
-            
-            x = Convert.ToInt32(Console.ReadLine());
-            y = Convert.ToInt32(Console.ReadLine());
-            Console.SetCursorPosition(x, y);
             Console.Write("Введите имя: ");
             userInputName = Console.ReadLine();
-            Console.WriteLine( 1 + (userInputName.Length) + 1);
-            userInputN = userInputName.Length;
-            Console.Write("Введите символ для прикола: ");
+            Console.Write("Введите любой символ: ");
             userInputSymbol = Console.ReadLine();
 
-            
+            for (int i = beforyName; i < afterName; i++)
+            {
+                if (i == averageValue)
+                {
+                    Console.WriteLine($"{userInputSymbol} {userInputName}  {userInputSymbol}");
+                }
+
+                for (int j = 0; j < userInputName.Length; j++)
+                {
+                    Console.Write($"{userInputSymbol} ");
+                }
+
+                Console.WriteLine();
+            }
         }
     }
 }
