@@ -10,12 +10,16 @@ namespace FindCycles
             int receivedNumber;  
             int smallNumber = 1;
             int bigNumber = 27;
+            bool isCalculationNumbers = true;
+            string userInputExit;
+            string wordExit = "exit";
 
             receivedNumber = random.Next(smallNumber, bigNumber);
+            int bigNumberValue = bigNumber + 1;
 
-            while (receivedNumber > 0)
+            while (isCalculationNumbers)
             {
-                receivedNumber = random.Next(smallNumber, bigNumber + 1);
+                receivedNumber = random.Next(smallNumber, bigNumberValue);
                 Console.WriteLine(receivedNumber);
                 Console.ReadKey();
 
@@ -30,6 +34,15 @@ namespace FindCycles
                 else if(smallNumber < receivedNumber && receivedNumber == bigNumber)
                 {
                     Console.WriteLine($"{smallNumber} < {receivedNumber} = {bigNumber}");
+                }
+
+                Console.Write($"Для выхода из программы, введите команду - {wordExit}: ");
+                userInputExit = Console.ReadLine();
+
+                if (userInputExit == wordExit)
+                {
+                    Console.WriteLine("Вы вели команду выхода из программы!");
+                    isCalculationNumbers = false;
                 }
             }
         }
