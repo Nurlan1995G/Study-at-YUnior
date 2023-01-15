@@ -3,33 +3,26 @@ using System;
 
 namespace BossFight
 {
-    class Boss   //Легенда: Вы – теневой маг(можете быть вообще хоть кем) и у вас в арсенале есть несколько заклинаний, которые
-                 //вы можете использовать против Босса. Вы должны уничтожить босса и только после этого будет вам покой.
-                 //Формально: перед вами босс, у которого есть определенное кол-во жизней и определенный ответный урон.У вас есть 4 заклинания для нанесения урона боссу.Программа завершается только после смерти босса или смерти пользователя.
-                 //Пример заклинаний ::      Рашамон – призывает теневого духа для нанесения атаки (Отнимает 100 хп игроку)
-                 //Хуганзакура(Может быть выполнен только после призыва теневого духа), наносит 100 ед.урона
-                 //Межпространственный разлом – позволяет скрыться в разломе и восстановить 250 хп.Урон босса по вам не проходит
-                 //Заклинания должны иметь схожий характер и быть достаточно сложными, они должны иметь какие-то условия выполнения(пример - Хуганзакура). Босс должен иметь возможность убить пользователя.
+    class Boss   
     {
         static void Main(string[] args)
         {
             Random random = new Random();
-
             string shadowMagician = "Теневой маг";
             string bossDaran = "Босс Даран";
             int healthShadowMagician = random.Next(450, 700);
-            int healthBoss = random.Next(1900, 2000);
+            int healthBoss = random.Next(1500, 2000);
             int damageShadowMagician;
-            int damageBoss = random.Next(120, 140);
+            int damageBoss = random.Next(90, 140);
             int userInpurAttack;
             int rashamonSpell = 1;
             int huganzakuraSpell = 2;
             int interdimensionalRift = 3;
-            int damageRashamonSpellMagician = 100;  // урон заклинания рашамон мага
-            int damageHuganzakuraSpellMagician = 150;   //заклинание хуганзакура
-            int interdimensionalRiftMagician = 250;  //межпространственный разлом
-            bool isActivInterdimensionalRift = false;
+            int damageRashamonSpellMagician = 100;  
+            int damageHuganzakuraSpellMagician = 150;   
+            int interdimensionalRiftMagician = 250;  
             bool isLastBattle = true;
+            bool isActivHuganzakura = false;
 
             Console.WriteLine($"Добро пожаловать на последнию локацию {shadowMagician}, тут вы сразитесь со своим последним противником и после отправитесь на покой. И ваш последний противник - {bossDaran}");
             Console.WriteLine("Характеристики перед боем.");
@@ -50,18 +43,23 @@ namespace BossFight
                 {
                     healthBoss -= damageRashamonSpellMagician;
                     healthShadowMagician -= damageBoss;
+                    isActivHuganzakura = true;
                 }
-                else if (userInpurAttack == huganzakuraSpell)
+                else if (userInpurAttack == huganzakuraSpell && isActivHuganzakura == true)
                 {
-                    healthBoss -= damageHuganzakuraSpellMagician;
-                    healthShadowMagician -= damageBoss;
-                }
+                   healthBoss -= damageHuganzakuraSpellMagician;
+                   healthShadowMagician -= damageBoss;
+                } 
                 else if (userInpurAttack == interdimensionalRift && healthShadowMagician < 100)
                 {
                     healthShadowMagician += interdimensionalRiftMagician;
                     Console.WriteLine($"Заклинание - Межпространственный разлом активирован, у вас прибавилось {interdimensionalRiftMagician} хп. Сейчас у вас {healthShadowMagician} хп.");
                 }
-
+                else
+                {
+                    Console.WriteLine($"Вы не можете активировать {huganzakuraSpell}, пока не активировали {rashamonSpell}");
+                }
+                
                 if (healthShadowMagician < 0 && healthBoss > healthShadowMagician)
                 {
                     Console.WriteLine($"{bossDaran} выиграл. Попробуйте еще раз!");
