@@ -20,31 +20,23 @@ namespace RandonCycles
             Console.Write($"Ведите кратное число {divisibleNumber3} или {divisibleNumber5}: ");
             userInputNumber = Convert.ToInt32(Console.ReadLine());
 
-            while (isRightDecision == false)
+            for (int i = 0; i <= endingNumber; i++)
             {
                 if (userInputNumber == divisibleNumber5)
                 {
-                    for (int i = 0; i < randomNumber; i += divisibleNumber5)
+                    if (randomNumber >= numbersSum)
                     {
-                        if (randomNumber >= numbersSum)
-                        {
-                            numbersSum += divisibleNumber5;
-                            Console.WriteLine(numbersSum);
-                            isRightDecision = true;
-                        }
+                        numbersSum += divisibleNumber5;
+                        Console.WriteLine(numbersSum);
                     }
                 }
 
-                if (userInputNumber == divisibleNumber3)
+                if(userInputNumber == divisibleNumber3)
                 {
-                    for (int j = 0; j < randomNumber; j += divisibleNumber3)
+                    if (randomNumber >= numbersSum)
                     {
-                        if (randomNumber >= numbersSum)
-                        {
-                            numbersSum += divisibleNumber3;
-                            Console.WriteLine(numbersSum);
-                            isRightDecision = true; 
-                        }
+                        numbersSum += divisibleNumber3;
+                        Console.WriteLine(numbersSum);
                     }
                 }
             }
