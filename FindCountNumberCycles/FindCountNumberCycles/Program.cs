@@ -24,7 +24,6 @@ namespace FindCycles
                     Console.WriteLine("\n");
                     Console.WriteLine($"Число - {i}");
                     Console.WriteLine("Не трехзначное число");
-                    number++;
                 }
 
                 if(i >= startNumber)
