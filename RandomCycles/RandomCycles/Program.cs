@@ -6,8 +6,8 @@ namespace RandonCycles
     {
         static void Main(string[] args)
         {
-            int numbersSum = 0;
             Random random = new Random();
+            int numbersSum = 0;
             int randomNumber;
             int endingNumber = 100;
             int divisibleNumber3 = 3;
