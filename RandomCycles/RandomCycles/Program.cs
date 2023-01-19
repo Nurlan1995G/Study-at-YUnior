@@ -13,7 +13,6 @@ namespace RandonCycles
             int divisibleNumber3 = 3;
             int divisibleNumber5 = 5;
             int userInputNumber;
-            bool isRightDecision = false;  
 
             randomNumber = random.Next(0, 100);
             Console.WriteLine($"Выпало рандомное число - {randomNumber}");
@@ -22,22 +21,16 @@ namespace RandonCycles
 
             for (int i = 0; i <= endingNumber; i++)
             {
-                if (userInputNumber == divisibleNumber5)
+                if (userInputNumber == divisibleNumber5 && randomNumber >= numbersSum)
                 {
-                    if (randomNumber >= numbersSum)
-                    {
-                        numbersSum += divisibleNumber5;
-                        Console.WriteLine(numbersSum);
-                    }
+                    numbersSum += divisibleNumber5;
+                    Console.WriteLine(numbersSum);
                 }
 
-                if(userInputNumber == divisibleNumber3)
+                if(userInputNumber == divisibleNumber3 && randomNumber >= numbersSum)
                 {
-                    if (randomNumber >= numbersSum)
-                    {
-                        numbersSum += divisibleNumber3;
-                        Console.WriteLine(numbersSum);
-                    }
+                    numbersSum += divisibleNumber3;
+                    Console.WriteLine(numbersSum);
                 }
             }
         }
