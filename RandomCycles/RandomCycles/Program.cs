@@ -3,28 +3,51 @@
 namespace RandonCycles
 {
     class Cycles        
-    { 
+    {
         static void Main(string[] args)
         {
             int numbersSum = 0;
             Random random = new Random();
-            int numberRand;
-            int numberMultiple;
+            int randomNumber;
+            int endingNumber = 100;
+            int divisibleNumber3 = 3;
+            int divisibleNumber5 = 5;
+            int userInputNumber;
+            bool isRightDecision = false;  
 
-            numberRand = random.Next(0, 100);
-           
-            Console.Write($"Введите кратное число 3 или 5: ");
-            numberMultiple = Convert.ToInt32(Console.ReadLine());
+            randomNumber = random.Next(0, 100);
+            Console.WriteLine($"Выпало рандомное число - {randomNumber}");
+            Console.Write($"Ведите кратное число {divisibleNumber3} или {divisibleNumber5}: ");
+            userInputNumber = Convert.ToInt32(Console.ReadLine());
 
-            for(int i = 0; i < numberRand; i++)
+            while (isRightDecision == false)
             {
-                if(i % numberMultiple == 0)
+                if (userInputNumber == divisibleNumber5)
                 {
-                    numbersSum += i;
+                    for (int i = 0; i < randomNumber; i += divisibleNumber5)
+                    {
+                        if (randomNumber >= numbersSum)
+                        {
+                            numbersSum += divisibleNumber5;
+                            Console.WriteLine(numbersSum);
+                            isRightDecision = true;
+                        }
+                    }
+                }
+
+                if (userInputNumber == divisibleNumber3)
+                {
+                    for (int j = 0; j < randomNumber; j += divisibleNumber3)
+                    {
+                        if (randomNumber >= numbersSum)
+                        {
+                            numbersSum += divisibleNumber3;
+                            Console.WriteLine(numbersSum);
+                            isRightDecision = true; 
+                        }
+                    }
                 }
             }
-            Console.WriteLine($"Рандомное число выпало {numberRand}");
-            Console.WriteLine($"Сумма чисел кратной {numberMultiple} = {numbersSum}");
         }
     }
 }
