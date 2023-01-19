@@ -2,48 +2,42 @@
 
 namespace FindCycles
 {
-    class Cycles    
+    class Cycles    //Дано N (1 ≤ N ≤ 27). Найти количество трехзначных натуральных чисел, которые кратны N. Операции деления
+                    //(/, %) не использовать. А умножение не требуется.Число N всего одно, его надо получить в нужном диапазоне.
+                   
+
     {
         static void Main(string[] args)
         {
             Random random = new Random();
-            int receivedNumber;  
+            int receivedNumber;
+            int number = 0;
             int smallNumber = 1;
             int bigNumber = 27;
-            bool isCalculationNumbers = true;
-            string userInputExit;
-            string wordExit = "exit";
+            int startNumber = 100;
+            int endingNumber = 999;
 
             receivedNumber = random.Next(smallNumber, bigNumber);
             int bigNumberValue = bigNumber + 1;
+            Console.WriteLine($"Число N = {receivedNumber}");
 
-            while (isCalculationNumbers)
+            for(int i = 0; i < endingNumber; i += receivedNumber)
             {
-                receivedNumber = random.Next(smallNumber, bigNumberValue);
-                Console.WriteLine(receivedNumber);
-                Console.ReadKey();
-
-                if (smallNumber < receivedNumber && receivedNumber < bigNumber)
+                if(i <= startNumber)
                 {
-                    Console.WriteLine($"{smallNumber} < {receivedNumber} < {bigNumber}");
+                    Console.WriteLine("\n");
+                    Console.WriteLine($"Число - {i}");
+                    Console.WriteLine("Не трехзначное число");
+                    number++;
                 }
-                else if(smallNumber == receivedNumber && receivedNumber < bigNumber)
+                if(i >= startNumber)
                 {
-                    Console.WriteLine($"{smallNumber} = {receivedNumber} < {bigNumber}");
+                    Console.WriteLine("\n");
+                    Console.WriteLine($"Число - {i}");
+                    Console.WriteLine("Кратное число");
+                    number++;
                 }
-                else if(smallNumber < receivedNumber && receivedNumber == bigNumber)
-                {
-                    Console.WriteLine($"{smallNumber} < {receivedNumber} = {bigNumber}");
-                }
-
-                Console.Write($"Для выхода из программы, введите команду - {wordExit}: ");
-                userInputExit = Console.ReadLine();
-
-                if (userInputExit == wordExit)
-                {
-                    Console.WriteLine("Вы вели команду выхода из программы!");
-                    isCalculationNumbers = false;
-                }
+                Console.WriteLine($"Кол-во трехзначных натуральных чисел равна: {receivedNumber}");
             }
         }
     }
