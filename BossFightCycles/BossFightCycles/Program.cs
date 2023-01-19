@@ -8,76 +8,79 @@ namespace BossFight
         static void Main(string[] args)
         {
             Random random = new Random();
-            string shadowMagician = "Теневой маг";
+            string magicianShadow = "Теневой маг";
             string bossDaran = "Босс Даран";
-            int healthShadowMagician = random.Next(450, 700);
-            int healthBoss = random.Next(1500, 2000);
-            int damageShadowMagician;
-            int damageBoss = random.Next(90, 140);
-            int userInpurAttack;
+            int magicianValueHealthFrom = 450;
+            int magicianValueHealthBefory = 700;
+            int bossValueHealthFrom = 1500;
+            int bossValueHealthBefory = 2000;
+            int bossValueDamageFrom = 90;
+            int bossValueDamageBefory = 140;
+            int magicianShadowHealth = random.Next(magicianValueHealthFrom, magicianValueHealthBefory);
+            int bossHealth = random.Next(bossValueHealthFrom, bossValueHealthBefory);
+            int magicianShadowDamage;
+            int bossDamage = random.Next(bossValueDamageFrom, bossValueDamageBefory);
+            int userInputAttack;
             int rashamonSpell = 1;
             int huganzakuraSpell = 2;
             int interdimensionalRift = 3;
-            int damageRashamonSpellMagician = 100;  
-            int damageHuganzakuraSpellMagician = 150;   
-            int interdimensionalRiftMagician = 250;  
+            int magicianRashamonSpellDamage = 100;  
+            int magicianHuganzakuraSpellDamage = 150;   
+            int magicianInterdimensionalRift = 250;  
             bool isLastBattle = true;
             bool isActivHuganzakura = false;
 
-            Console.WriteLine($"Добро пожаловать на последнию локацию {shadowMagician}, тут вы сразитесь со своим последним противником и после отправитесь на покой. И ваш последний противник - {bossDaran}");
+            Console.WriteLine($"Добро пожаловать на последнию локацию {magicianShadow}, тут вы сразитесь со своим последним противником и после отправитесь на покой. И ваш последний противник - {bossDaran}");
             Console.WriteLine("Характеристики перед боем.");
-            Console.WriteLine($"Теневой маг - {healthShadowMagician} хп");
-            Console.WriteLine($"Босс - {healthBoss} хп, {damageBoss} урона от босса");
+            Console.WriteLine($"Теневой маг - {magicianShadowHealth} хп");
+            Console.WriteLine($"Босс - {bossHealth} хп, {bossDamage} урона от босса");
 
-            Console.WriteLine($"{shadowMagician} - заклинания: ");
-            Console.WriteLine($"При нажатии на клавишу - {rashamonSpell}, доступно заклинание Рашамон (призывает теневого духа для нанесения атаки), наносит {damageRashamonSpellMagician} урона противнику.");
-            Console.WriteLine($"При нажатии на клавишу - {huganzakuraSpell}, доступно заклинание Хуганзукура, наносит {damageHuganzakuraSpellMagician} урона, доступен только после применения Рашамон");
+            Console.WriteLine($"{magicianShadow} - заклинания: ");
+            Console.WriteLine($"При нажатии на клавишу - {rashamonSpell}, доступно заклинание Рашамон (призывает теневого духа для нанесения атаки), наносит {magicianRashamonSpellDamage} урона противнику.");
+            Console.WriteLine($"При нажатии на клавишу - {huganzakuraSpell}, доступно заклинание Хуганзукура, наносит {magicianHuganzakuraSpellDamage} урона, доступен только после применения Рашамон");
             Console.WriteLine($"При нажатии на клавишу - {interdimensionalRift}, доступно заклинание Межпространственный разлом, только когда у вас осталось меньше 100 хп");
 
-            while (isLastBattle)
+            while (magicianShadowHealth > 0 && bossHealth > 0)
             {
                 Console.WriteLine("Вы бьете, нажмите на клавишу");
-                userInpurAttack = Convert.ToInt32(Console.ReadLine());
-
-                if (userInpurAttack == rashamonSpell)
+                userInputAttack = Convert.ToInt32(Console.ReadLine());
+                
+                if (userInputAttack == rashamonSpell)
                 {
-                    healthBoss -= damageRashamonSpellMagician;
-                    healthShadowMagician -= damageBoss;
+                    bossHealth -= magicianRashamonSpellDamage;
+                    magicianShadowHealth -= bossDamage;
                     isActivHuganzakura = true;
                 }
-                else if (userInpurAttack == huganzakuraSpell && isActivHuganzakura == true)
+                else if (userInputAttack == huganzakuraSpell && isActivHuganzakura == true)
                 {
-                   healthBoss -= damageHuganzakuraSpellMagician;
-                   healthShadowMagician -= damageBoss;
-                } 
-                else if (userInpurAttack == interdimensionalRift && healthShadowMagician < 100)
+                    bossHealth -= magicianHuganzakuraSpellDamage;
+                    magicianShadowHealth -= bossDamage;
+                }
+                else if (userInputAttack == interdimensionalRift && magicianShadowHealth < 100)
                 {
-                    healthShadowMagician += interdimensionalRiftMagician;
-                    Console.WriteLine($"Заклинание - Межпространственный разлом активирован, у вас прибавилось {interdimensionalRiftMagician} хп. Сейчас у вас {healthShadowMagician} хп.");
+                    magicianShadowHealth += magicianInterdimensionalRift;
+                    Console.WriteLine($"Заклинание - Межпространственный разлом активирован, у вас прибавилось {magicianInterdimensionalRift} хп. Сейчас у вас {magicianShadowHealth} хп.");
                 }
                 else
                 {
                     Console.WriteLine($"Вы не можете активировать {huganzakuraSpell}, пока не активировали {rashamonSpell}");
                 }
                 
-                if (healthShadowMagician < 0 && healthBoss > healthShadowMagician)
-                {
-                    Console.WriteLine($"{bossDaran} выиграл. Попробуйте еще раз!");
-                    isLastBattle = false;
-                }
-                else if (healthBoss < 0 && healthShadowMagician > healthBoss)
-                {
-                    Console.WriteLine($"{shadowMagician} выиграл. {bossDaran} повержен.");
-                    isLastBattle = false;
-                }
-                else if (healthShadowMagician < 0 && healthBoss < 0)
-                {
-                    Console.WriteLine("Оба проиграли. Попробуйте еще раз!");
-                    isLastBattle = false;
-                }
+                Console.WriteLine($"{magicianShadow} нанес удар боссу - остаток жизни: {bossHealth} хп");
+                Console.WriteLine($"{bossDaran} нанес удар {magicianShadow} - остаток жизни: {magicianShadowHealth} хп");
+            }
 
-                Console.WriteLine($"{shadowMagician} нанес удар боссу - остаток жизни: {healthBoss} хп");
-                Console.WriteLine($"{bossDaran} нанес удар {shadowMagician} - остаток жизни: {healthShadowMagician} хп");
+            if (magicianShadowHealth < 0 && bossHealth > magicianShadowHealth)
+            {
+                Console.WriteLine($"{bossDaran} выиграл. Попробуйте еще раз!");
+            }
+            else if (bossHealth < 0 && magicianShadowHealth > bossHealth)
+            {
+                Console.WriteLine($"{magicianShadow} выиграл. {bossDaran} повержен.");
+            }
+            else if (magicianShadowHealth < 0 && bossHealth < 0)
+            {
+                Console.WriteLine("Оба проиграли. Попробуйте еще раз!");
             }
         }
     }
