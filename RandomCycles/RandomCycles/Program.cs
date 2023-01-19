@@ -14,7 +14,7 @@ namespace RandonCycles
             int divisibleNumber5 = 5;
             int userInputNumber;
 
-            randomNumber = random.Next(0, 100);
+            randomNumber = random.Next(0, endingNumber);
             Console.WriteLine($"Выпало рандомное число - {randomNumber}");
             Console.Write($"Ведите кратное число {divisibleNumber3} или {divisibleNumber5}: ");
             userInputNumber = Convert.ToInt32(Console.ReadLine());
