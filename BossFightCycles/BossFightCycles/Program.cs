@@ -26,7 +26,8 @@ namespace BossFight
             int interdimensionalRift = 3;
             int magicianRashamonSpellDamage = 100;  
             int magicianHuganzakuraSpellDamage = 150;   
-            int magicianInterdimensionalRift = 250;  
+            int magicianInterdimensionalRift = 250;
+            int replenishmentHealth = 100;
             bool isLastBattle = true;
             bool isActivHuganzakura = false;
 
@@ -38,7 +39,7 @@ namespace BossFight
             Console.WriteLine($"{magicianShadow} - заклинания: ");
             Console.WriteLine($"При нажатии на клавишу - {rashamonSpell}, доступно заклинание Рашамон (призывает теневого духа для нанесения атаки), наносит {magicianRashamonSpellDamage} урона противнику.");
             Console.WriteLine($"При нажатии на клавишу - {huganzakuraSpell}, доступно заклинание Хуганзукура, наносит {magicianHuganzakuraSpellDamage} урона, доступен только после применения Рашамон");
-            Console.WriteLine($"При нажатии на клавишу - {interdimensionalRift}, доступно заклинание Межпространственный разлом, только когда у вас осталось меньше 100 хп");
+            Console.WriteLine($"При нажатии на клавишу - {interdimensionalRift}, доступно заклинание Межпространственный разлом, только когда у вас осталось меньше {replenishmentHealth} хп");
 
             while (magicianShadowHealth > 0 && bossHealth > 0)
             {
@@ -56,7 +57,7 @@ namespace BossFight
                     bossHealth -= magicianHuganzakuraSpellDamage;
                     magicianShadowHealth -= bossDamage;
                 }
-                else if (userInputAttack == interdimensionalRift && magicianShadowHealth < 100)
+                else if (userInputAttack == interdimensionalRift && magicianShadowHealth < replenishmentHealth)
                 {
                     magicianShadowHealth += magicianInterdimensionalRift;
                     Console.WriteLine($"Заклинание - Межпространственный разлом активирован, у вас прибавилось {magicianInterdimensionalRift} хп. Сейчас у вас {magicianShadowHealth} хп.");
