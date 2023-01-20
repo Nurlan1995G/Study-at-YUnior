@@ -23,6 +23,7 @@ namespace RandonCycles
                     numbersSum += i;
                 }
             }
+
             Console.WriteLine($"Сумма положительных чисел, которые кратны {divisibleNumber3} или {divisibleNumber5} - равна {numbersSum}");
         }
     }
