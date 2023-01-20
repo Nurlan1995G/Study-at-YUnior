@@ -2,29 +2,30 @@
 
 namespace CyclesSymbol
 {
-    class CyclesSym
+    class CyclesSym     
     {
         static void Main(string[] args)
         {
             string userInputName;
-            string userInputSymbol;
+            char userInputSymbol;
             int beforyName = 1;
-            int afterName = 3;
             int averageValue = 2;
+            string connectingWords;
 
             Console.Write("Введите имя: ");
             userInputName = Console.ReadLine();
             Console.Write("Введите любой символ: ");
-            userInputSymbol = Console.ReadLine();
+            userInputSymbol = Convert.ToChar(Console.ReadLine());
+            connectingWords = $"{userInputSymbol} {userInputName}  {userInputSymbol}";
 
-            for (int i = beforyName; i < afterName; i++)
+            for(int i = 0; i < averageValue; i++)
             {
-                if (i == averageValue)
+                if(i == beforyName)
                 {
-                    Console.WriteLine($"{userInputSymbol} {userInputName}  {userInputSymbol}");
+                    Console.WriteLine($"{connectingWords}");
                 }
 
-                for (int j = 0; j < userInputName.Length; j++)
+                for(int j = 0; j < userInputName.Length; j++)
                 {
                     Console.Write($"{userInputSymbol} ");
                 }
