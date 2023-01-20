@@ -7,24 +7,25 @@ namespace RandonCycles
         static void Main(string[] args)
         {
             Random random = new Random();
-            int numbersSum = 0;
+            int sum = 0;
             int randomNumber;
-            int endingNumber = 101;
-            int fifthDivider = 5;
-            int thirdDivider = 3;
+            int minRandomValue = 0;
+            int maxRandomValue = 101;
+            int largerDivider = 5;
+            int smallerDivider = 3;
 
-            randomNumber = random.Next(0, endingNumber);
+            randomNumber = random.Next(minRandomValue, maxRandomValue);
             Console.WriteLine($"Выпало рандомное число - {randomNumber}");
 
             for (int i = 0; i <= randomNumber; i++)
             {
-                if(i % thirdDivider == 0 || i % fifthDivider == 0)
+                if(i % smallerDivider == 0 || i % largerDivider == 0)
                 {
-                    numbersSum += i;
+                    sum += i;
                 }
             }
 
-            Console.WriteLine($"Сумма положительных чисел, которые кратны {thirdDivider} или {fifthDivider} - равна {numbersSum}");
+            Console.WriteLine($"Сумма положительных чисел, которые кратны {smallerDivider} или {largerDivider} - равна {sum}");
         }
     }
 }
