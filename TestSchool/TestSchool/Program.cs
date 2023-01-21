@@ -7,23 +7,21 @@ namespace CSLight
         static void Main(string[] args)
         {
             string userInputName;
-            char userInputSymbol;
+            string userInputSymbol;
             int beforyName = 1;
             int averageValue = 2;
             string connectingWords;
-            char userSmbol;
+            string userSmbol = "";
 
             Console.Write("Введите имя: ");
             userInputName = Console.ReadLine();
             Console.Write("Введите любой символ: ");
-            userInputSymbol = Convert.ToChar(Console.ReadLine());
+            userInputSymbol = Console.ReadLine();
             connectingWords = $"{userInputSymbol} {userInputName}  {userInputSymbol}";
-            userSmbol = userInputSymbol;
 
             for (int i = 0; i < userInputName.Length; i++)
             {
-                Console.Write($"{userInputSymbol} ");
-                userSmbol = userInputSymbol;
+                userSmbol += $"{userInputSymbol} ";
             }
 
             Console.WriteLine(userSmbol);
