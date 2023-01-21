@@ -26,8 +26,7 @@ namespace DegreeTwo
                 }
             }
 
-            Console.WriteLine("\n");
-            Console.WriteLine($"Число - {randomNumber}. Минимальная степень двойки превосходящая заданое число, будет {mainNumber} в степень {degreeNumber} равна - {resultingValue}.\n {randomNumber} < {resultingValue}");
+            Console.WriteLine($"Минимальная степень двойки превосходящая заданое число, будет {mainNumber} в степень {degreeNumber} равна - {resultingValue}.\n {randomNumber} < {resultingValue}");
         }
     }
 }
