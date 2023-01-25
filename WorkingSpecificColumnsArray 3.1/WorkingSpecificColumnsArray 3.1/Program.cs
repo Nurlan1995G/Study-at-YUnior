@@ -11,17 +11,19 @@ namespace WorkingArray
             int number = 0;
             int additionSum = 0;
             int productSum = 1;
+            int beginningOperation = 1;
+            int midOperation = 2;
 
             while (isOpen)
             {
-                for (int i = 1; i < fridge.GetLength(0); i++)
+                for (int i = beginningOperation; i < fridge.GetLength(0); i++)
                 {
-                    if (i == 1)
+                    if (i == beginningOperation)
                     {
                         Console.WriteLine("Закончился цикл по i");
                     }
 
-                    if(i == 2)
+                    if(i == midOperation)
                     {
                         isOpen = false;
                         break;
