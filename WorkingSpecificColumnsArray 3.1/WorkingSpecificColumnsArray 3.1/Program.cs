@@ -16,27 +16,14 @@ namespace WorkingArray
 
             while (isOpen)
             {
-                for (int i = beginningOperation; i < fridge.GetLength(0); i++)
+                for (int i = 0; i < fridge.GetLength(1); i++)
                 {
-                    if (i == beginningOperation)
-                    {
-                        Console.WriteLine("Закончился цикл по i");
-                    }
-
-                    if(i == midOperation)
-                    {
-                        isOpen = false;
-                        break;
-                    }
-
-                    for (int j = 0; j < fridge.GetLength(1); j++)
-                    {
-                        number = fridge[i,j];
-                        additionSum += number;
-                        productSum *= number;
-                    }
-                    Console.WriteLine();
+                    number = fridge[1,i];
+                    additionSum += number;
+                    productSum *= number;
                 }
+                Console.WriteLine();
+                isOpen = false;
             }
 
             Console.Write($"\nСумма второй строки равна - {additionSum},произведение первого столбца равна - {productSum}\n");
