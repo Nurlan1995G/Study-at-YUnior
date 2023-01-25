@@ -2,30 +2,35 @@
 
 namespace WorkingArray
 {
-    class Working    //Дан двумерный массив. Вычислить сумму второй строки и произведение первого столбца.Вывести исходную матрицу и результаты вычислений.
+    class Working   
     {
         static void Main(string[] args)
         {
-            bool isOpen = true;
             int[,] fridge = { {2,5,1 }, {3,6,2 }, {4,1,7 } };
-            int number = 0;
+            int additionNumber = 0;
             int additionSum = 0;
+            int numberProduct = 0;
             int productSum = 1;
-            int beginningOperation = 1;
-            int midOperation = 2;
 
-            while (isOpen)
+            for (int i = 0; i < fridge.GetLength(0); i++) 
             {
-                for (int i = 0; i < fridge.GetLength(1); i++)
-                {
-                    number = fridge[1,i];
-                    additionSum += number;
-                    productSum *= number;
-                }
-                Console.WriteLine();
-                isOpen = false;
-            }
+                numberProduct = fridge[i, 0];
+                productSum *= numberProduct;
 
+                for (int j = 0; j < fridge.GetLength(1); j++)
+                {
+                    Console.Write(fridge[i, j] + " ");
+
+                    if (i == 2)
+                    {
+                        additionNumber = fridge[1, j];
+                        additionSum += additionNumber;
+                    }
+                }
+
+                Console.WriteLine();
+            }
+              
             Console.Write($"\nСумма второй строки равна - {additionSum},произведение первого столбца равна - {productSum}\n");
         }
     }
