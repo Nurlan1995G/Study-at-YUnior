@@ -37,7 +37,7 @@ namespace LargestElement
 
             for(int i = 0; i < elementMatrix.GetLength(0); i++)
             {
-                for(int j = 0; j < elementMatrix.GetLength(1); j++)
+                for(int j = 0; j < elementMatrix.GetLength(elementInCycles); j++)
                 {
                     if (elementMatrix[i,j] == maxElement)
                     {
