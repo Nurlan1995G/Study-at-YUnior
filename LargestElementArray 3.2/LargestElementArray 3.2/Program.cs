@@ -14,10 +14,11 @@ namespace LargestElement
             int initialRandomNumber = 0;
             int upperRandomNumber = 9;
             int reducedNumberToMatrix = 0;
+            int elementInCycles = 1;
 
             for (int i = 0; i < elementMatrix.GetLength(0); i++)
             {
-                for (int j = 0; j < elementMatrix.GetLength(1); j++)
+                for (int j = 0; j < elementMatrix.GetLength(elementInCycles); j++)
                 {
                     elementMatrix[i, j] = random.Next(initialRandomNumber, upperRandomNumber);
                     Console.Write(elementMatrix[i, j] + " ");
