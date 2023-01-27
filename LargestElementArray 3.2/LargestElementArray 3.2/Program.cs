@@ -23,11 +23,11 @@ namespace LargestElement
                     if(maxElement < elementMatrix[i, j])
                     {
                         maxElement = elementMatrix[i, j];
-                        Console.Write(maxElement);
                     }
                 }
 
                 Console.WriteLine();
+                Console.WriteLine(maxElement);
             }
         }
     }
