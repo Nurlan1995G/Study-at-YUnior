@@ -7,20 +7,35 @@ namespace LocalMaxima
     {
         static void Main(string[] args)
         {
-            int[] fullNumbers = new int[30];
+            int rowNumber = 30;
+            int[] numbers = new int[rowNumber];
             Random random = new Random();
-            int maxElement = int.MinValue;
-            int number = 0;
+            int stepNumber = 1;
+            int maxRandomNumber = 9;
+            int minRandomNumber = 1;
+            int intialValue = 1;
+            int followingValue = 2;
 
-            for(int i = 0; i < fullNumbers.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                fullNumbers[i] = random.Next(0,9);
-                Console.Write(fullNumbers[i] + " ");
-                maxElement = fullNumbers[i];
+                numbers[i] = random.Next(minRandomNumber, maxRandomNumber);
+                Console.Write(numbers[i] + " ");
 
-                if (fullNumbers[i] < maxElement && maxElement > fullNumbers[i])
+                if (i == 1)
                 {
-                    Console.Write($"Локальнам максимум является элемент - {fullNumbers[i]}");
+                    if (numbers[i] > numbers[i - intialValue])
+                    {
+                        Console.Write($"({numbers[i]}) ");
+                    }
+                    stepNumber++;
+                }
+                else if (i == stepNumber)
+                {
+                    if (numbers[i-intialValue] > numbers[i-followingValue] && numbers[i-intialValue] > numbers[i])
+                    {
+                        Console.Write($"({numbers[i-1]}) ");
+                    }
+                    stepNumber++;
                 }
             }
         }
