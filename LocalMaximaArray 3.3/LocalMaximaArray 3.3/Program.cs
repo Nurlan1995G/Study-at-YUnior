@@ -10,10 +10,12 @@ namespace LocalMaxima
             int[] numbers = new int[rowNumber];
             Random random = new Random();
             int stepNumber = 1;
+            int index = 1;
+            int minDecreaseNumber = 1;
+            int maxDecreaseNumber = 2;
+            int startVerification = 2;
             int maxRandomNumber = 9;
             int minRandomNumber = 0;
-            int iterationValue = 1;
-            int followingValue = 2;
 
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -23,26 +25,27 @@ namespace LocalMaxima
 
             Console.WriteLine();
 
-            for(int i = 0; i < numbers.Length; i++)
+            if (numbers[0] > numbers[index])
             {
-                if (i == iterationValue)
-                {
-                    if (numbers[i] > numbers[i - iterationValue])
-                    {
-                        Console.Write($"{numbers[i]} ");
-                    }
+                Console.Write(numbers[0] + " ");
+            }
 
-                    stepNumber++;
-                }
-                else if (i == stepNumber)
-                {
-                    if (numbers[i - iterationValue] > numbers[i - followingValue] && numbers[i - iterationValue] > numbers[i])
-                    {
-                        Console.Write($"{numbers[i - iterationValue]} ");
-                    }
+            for(int i = startVerification; i < numbers.Length; i++)
+            {
+                stepNumber++;
 
-                    stepNumber++;
+                if (i == stepNumber)
+                {
+                    if (numbers[i - minDecreaseNumber] > numbers[i - maxDecreaseNumber] && numbers[i - minDecreaseNumber] > numbers[i])
+                    {
+                        Console.Write(numbers[i - minDecreaseNumber] + " ");
+                    }
                 }
+            }
+
+            if (numbers[numbers.Length - minDecreaseNumber] > numbers[numbers.Length - maxDecreaseNumber])
+            {
+                Console.Write(numbers[numbers.Length - minDecreaseNumber]);
             }
         }
     }
