@@ -9,11 +9,8 @@ namespace LocalMaxima
             int rowNumber = 30;
             int[] numbers = new int[rowNumber];
             Random random = new Random();
-            int stepNumber = 1;
             int index = 1;
-            int minDecreaseNumber = 1;
-            int maxDecreaseNumber = 2;
-            int startVerification = 2;
+            int startVerification = 1;
             int maxRandomNumber = 9;
             int minRandomNumber = 0;
 
@@ -30,22 +27,17 @@ namespace LocalMaxima
                 Console.Write(numbers[0] + " ");
             }
 
-            for(int i = startVerification; i < numbers.Length; i++)
-            {
-                stepNumber++;
-
-                if (i == stepNumber)
+            for(int i = startVerification; i < numbers.Length - 1; i++)
+            { 
+                if (numbers[i] > numbers[i - 1] && numbers[i] > numbers[i + 1])
                 {
-                    if (numbers[i - minDecreaseNumber] > numbers[i - maxDecreaseNumber] && numbers[i - minDecreaseNumber] > numbers[i])
-                    {
-                        Console.Write(numbers[i - minDecreaseNumber] + " ");
-                    }
+                    Console.Write(numbers[i] + " ");
                 }
             }
 
-            if (numbers[numbers.Length - minDecreaseNumber] > numbers[numbers.Length - maxDecreaseNumber])
+            if (numbers[numbers.Length - 1] > numbers[numbers.Length - 2])
             {
-                Console.Write(numbers[numbers.Length - minDecreaseNumber]);
+                Console.Write(numbers[numbers.Length - 1]);
             }
         }
     }
