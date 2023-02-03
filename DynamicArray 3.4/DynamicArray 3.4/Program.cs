@@ -12,7 +12,7 @@ namespace DynamicArray
             int index = 0;
             int decreaseIndex = 1;
             int receivedSum = 0;
-            var userInputSum = "sumUserInputNumbers";
+            var userInputSum = "sum";
             var userInputExit = "exit";
             var userInputString = "";
             bool isWorkProgress = true;
