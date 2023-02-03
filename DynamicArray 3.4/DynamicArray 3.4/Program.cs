@@ -7,49 +7,51 @@ namespace DynamicArray
         static void Main(string[] args)
         {
             int[] userInputNumbers = new int[0];
-            int number;
+            int number = 0;
             int increaseLenght = 1;
             int index = 0;
             int decreaseIndex = 1;
             int receivedSum = 0;
-            string userInputSum = "sum";
-            string userInputExit = "exit";
-            string userInputString;
+            var userInputSum = "sumUserInputNumbers";
+            var userInputExit = "exit";
+            var userInputString = "";
             bool isWorkProgress = true;
 
             Console.WriteLine($"Вы можете тут водить числа и после того как введете команду - {userInputSum}, выведется сумма ваших чисел. Либо вести команду - {userInputExit}, выполнится выход из программы!");
 
             while (isWorkProgress)
             {
-                Console.Write("Введите число: ");
-                number = Convert.ToInt32(Console.ReadLine());
-
-                int[] sum = new int[userInputNumbers.Length + increaseLenght];
-
-                Console.Write($"Введите комманду - {userInputSum} или {userInputExit}: ");
+                Console.Write("Введите любую команду: ");
                 userInputString = Console.ReadLine();
 
-                for(int i = 0; i < userInputNumbers.Length; i++)
+                if(userInputString == userInputExit)
                 {
-                    sum[i] = userInputNumbers[i];
+                    Console.WriteLine("Вы вели команду выхода из программы!");
+                    isWorkProgress = false;
                 }
 
-                sum[sum.Length - decreaseIndex] = number;
-                userInputNumbers = sum;
-                receivedSum += userInputNumbers[0 + index];
+                if(userInputString != userInputExit && userInputString != userInputSum) 
+                {
+                    number = int.Parse(userInputString);
+
+                    int[] sumUserInputNumbers = new int[userInputNumbers.Length + increaseLenght];
+
+                    for (int i = 0; i < userInputNumbers.Length; i++)
+                    {
+                        sumUserInputNumbers[i] = userInputNumbers[i];
+                    }
+
+                    sumUserInputNumbers[sumUserInputNumbers.Length - decreaseIndex] = number;
+                    userInputNumbers = sumUserInputNumbers;
+                    receivedSum += userInputNumbers[0 + index];
+
+                    index++;
+                }
 
                 if (userInputString == userInputSum)
                 {
                     Console.WriteLine($"Сумма числен равна - {receivedSum}");
                 }
-
-                if (userInputString == userInputExit)
-                {
-                    Console.WriteLine("Вы вели команду завершения программы!");
-                    isWorkProgress = false;
-                }
-
-                index++;
             }
         }
     }
