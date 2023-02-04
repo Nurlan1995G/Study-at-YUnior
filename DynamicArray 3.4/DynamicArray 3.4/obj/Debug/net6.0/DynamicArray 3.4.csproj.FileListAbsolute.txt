@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\bin\Debug\net6.0\DynamicArray 3.4.exe
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\bin\Debug\net6.0\DynamicArray 3.4.deps.json
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\bin\Debug\net6.0\DynamicArray 3.4.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\bin\Debug\net6.0\DynamicArray 3.4.dll
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\bin\Debug\net6.0\DynamicArray 3.4.pdb
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\obj\Debug\net6.0\DynamicArray 3.4.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\obj\Debug\net6.0\DynamicArray 3.4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\obj\Debug\net6.0\DynamicArray 3.4.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\obj\Debug\net6.0\DynamicArray 3.4.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\obj\Debug\net6.0\DynamicArray 3.4.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\obj\Debug\net6.0\DynamicArray 3.4.dll
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\obj\Debug\net6.0\refint\DynamicArray 3.4.dll
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\obj\Debug\net6.0\DynamicArray 3.4.pdb
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\obj\Debug\net6.0\DynamicArray 3.4.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\DynamicArray 3.4\DynamicArray 3.4\obj\Debug\net6.0\ref\DynamicArray 3.4.dll
