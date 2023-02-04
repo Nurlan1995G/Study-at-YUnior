@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\bin\Debug\net6.0\ArrayRepetitionsNumber 3.5.exe
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\bin\Debug\net6.0\ArrayRepetitionsNumber 3.5.deps.json
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\bin\Debug\net6.0\ArrayRepetitionsNumber 3.5.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\bin\Debug\net6.0\ArrayRepetitionsNumber 3.5.dll
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\bin\Debug\net6.0\ArrayRepetitionsNumber 3.5.pdb
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\obj\Debug\net6.0\ArrayRepetitionsNumber 3.5.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\obj\Debug\net6.0\ArrayRepetitionsNumber 3.5.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\obj\Debug\net6.0\ArrayRepetitionsNumber 3.5.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\obj\Debug\net6.0\ArrayRepetitionsNumber 3.5.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\obj\Debug\net6.0\ArrayRepetitionsNumber 3.5.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\obj\Debug\net6.0\ArrayRepetitionsNumber 3.5.dll
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\obj\Debug\net6.0\refint\ArrayRepetitionsNumber 3.5.dll
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\obj\Debug\net6.0\ArrayRepetitionsNumber 3.5.pdb
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\obj\Debug\net6.0\ArrayRepetitionsNumber 3.5.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\ArrayRepetitionsNumber 3.5\ArrayRepetitionsNumber 3.5\obj\Debug\net6.0\ref\ArrayRepetitionsNumber 3.5.dll
