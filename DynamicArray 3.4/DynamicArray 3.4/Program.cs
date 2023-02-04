@@ -8,8 +8,6 @@ namespace DynamicArray
         {
             int[] numbers = new int[0];
             int number = 0;
-            int index = 0;
-            int receivedSum = 0;
             string userInputSum = "sum";
             string userInputExit = "exit";
             string userInput = "";
@@ -22,7 +20,23 @@ namespace DynamicArray
                 Console.Write("Введите любую команду: ");
                 userInput = Console.ReadLine();
 
-                if(userInput != userInputExit && userInput != userInputSum) 
+                if(userInput == userInputExit) 
+                {
+                    Console.WriteLine("Вы вели команду выхода из программы!");
+                    isWorkProgress = false;
+                }
+                else if (userInput == userInputSum)
+                {
+                    int receivedSum = 0;
+
+                    for(int i = 0; i < numbers.Length; i++)
+                    {
+                        receivedSum += numbers[i];
+                    }
+
+                    Console.WriteLine($"Сумма числен равна - {receivedSum}");
+                }
+                else
                 {
                     number = int.Parse(userInput);
 
@@ -35,18 +49,6 @@ namespace DynamicArray
 
                     tempNumbers[tempNumbers.Length - 1] = number;
                     numbers = tempNumbers;
-                    receivedSum += numbers[0 + index];
-
-                    index++;
-                }
-                else if (userInput == userInputSum)
-                {
-                    Console.WriteLine($"Сумма числен равна - {receivedSum}");
-                }
-                else
-                {
-                    Console.WriteLine("Вы вели команду выхода из программы!");
-                    isWorkProgress = false;
                 }
             }
         }
