@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "UIElement 4.2/1.0.0": {
+        "runtime": {
+          "UIElement 4.2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UIElement 4.2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
