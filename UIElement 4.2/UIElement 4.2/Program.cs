@@ -49,20 +49,20 @@ namespace UIElement
                 Console.Write($"Введите команду {userInputExit} для выхода из программы: ");
                 userInput = Console.ReadLine();
 
-                if(healthBar > maxHealthBar || manaBar > maxManaBar)
-                {
-                    Console.WriteLine("Вы вели выше максимального значения. Введите пожалуйста еще раз!");
-                    healthBar = 0;
-                    manaBar = 0;
-                    Console.ReadKey();
-                }
-
                 Console.Clear();
 
                 if (userInput == userInputExit)
                 {
                     Console.WriteLine("Вы вели команду выхода из программы!");
                     isWorking = false;
+                }
+                else if (healthBar > maxHealthBar || manaBar > maxManaBar)
+                {
+                    Console.WriteLine("Вы вели выше максимального значения. Введите пожалуйста еще раз!");
+                    healthBar = 0;
+                    manaBar = 0;
+                    Console.ReadKey();
+                    Console.Clear();
                 }
             }
         }
