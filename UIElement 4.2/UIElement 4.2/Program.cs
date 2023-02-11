@@ -2,7 +2,7 @@
 
 namespace UIElement
 {
-    class Element  
+    class Element  //Разработайте функцию, которая рисует некий бар (Healthbar, Manabar) в определённой позиции. Она также принимает некий закрашенный процент.
     {
         static void Main(string[] args)
         {
@@ -10,30 +10,41 @@ namespace UIElement
             int maxHealthBar;
             int manaBar = 0; 
             int maxManaBar;
-            bool isProgramWorks = true;
+            bool isWorking = true;
             string userInputExit = "exit";
             string userInput;
             int positionUpBar = 3;
             int positionLowerBar = 4;
             int positionTablesNumbers = 20;
+            int maxBar = 20;
 
             Console.Write("Введите максимальное число здоровья: ");
             maxHealthBar = Convert.ToInt32(Console.ReadLine());
             Console.Write("Введите максимальное число маны: ");
             maxManaBar = Convert.ToInt32(Console.ReadLine());
 
-            while (isProgramWorks)
+            if(maxHealthBar > maxBar)
+            {
+                maxHealthBar = maxBar;
+            }
+            
+            if(maxManaBar > maxBar)
+            {
+                maxManaBar = maxBar;
+            }
+
+            while (isWorking)
             {
                 Console.SetCursorPosition(0, positionTablesNumbers);
                 Console.WriteLine($"Максимальное число здоровья: {maxHealthBar}");
                 Console.WriteLine($"Максимальное число маны: {maxManaBar}");
 
-                Bar(healthBar, maxHealthBar, ConsoleColor.Red, positionUpBar, '_');
-                Bar(manaBar, maxManaBar, ConsoleColor.Green, positionLowerBar, '_');
+                DrawBar(healthBar, maxHealthBar, ConsoleColor.Red, positionUpBar, '_');
+                DrawBar(manaBar, maxManaBar, ConsoleColor.Green, positionLowerBar, '_');
 
-                Console.Write("\nВведите кол-во жизней в процентнои соотношении: ");
+                Console.Write("\nВведите кол-во жизней: ");
                 healthBar += Convert.ToInt32(Console.ReadLine());
-                Console.Write("Введите кол-во маны в процентнои соотношении: ");
+                Console.Write("Введите кол-во маны: ");
                 manaBar += Convert.ToInt32(Console.ReadLine());
                 Console.Write($"Введите команду {userInputExit} для выхода из программы: ");
                 userInput = Console.ReadLine();
@@ -51,12 +62,12 @@ namespace UIElement
                 if (userInput == userInputExit)
                 {
                     Console.WriteLine("Вы вели команду выхода из программы!");
-                    isProgramWorks = false;
+                    isWorking = false;
                 }
             }
         }
 
-        static void Bar(int value, int maxValue, ConsoleColor color,int position, char symbol = ' ')
+        static void DrawBar(int value, int maxValue, ConsoleColor color,int position, char symbol = ' ')
         {
             ConsoleColor defaultColor = Console.BackgroundColor;
             string bar = "";
