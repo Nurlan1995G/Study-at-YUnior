@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\obj\Debug\net6.0\Readint 4.3.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\obj\Debug\net6.0\Readint 4.3.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\obj\Debug\net6.0\Readint 4.3.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\obj\Debug\net6.0\Readint 4.3.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\obj\Debug\net6.0\Readint 4.3.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\bin\Debug\net6.0\Readint 4.3.exe
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\bin\Debug\net6.0\Readint 4.3.deps.json
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\bin\Debug\net6.0\Readint 4.3.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\bin\Debug\net6.0\Readint 4.3.dll
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\bin\Debug\net6.0\Readint 4.3.pdb
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\obj\Debug\net6.0\Readint 4.3.dll
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\obj\Debug\net6.0\refint\Readint 4.3.dll
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\obj\Debug\net6.0\Readint 4.3.pdb
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\obj\Debug\net6.0\Readint 4.3.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\Readint 4.3\Readint 4.3\obj\Debug\net6.0\ref\Readint 4.3.dll
