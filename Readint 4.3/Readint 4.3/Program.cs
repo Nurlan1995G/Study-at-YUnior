@@ -9,15 +9,13 @@
 
             while (isWorking)
             {
-                RaedNumber(out number);
-
-                Console.WriteLine($"Преобразование числа прошло верно - {number}");
+                RaedNumber();
             }
         }
 
-        static int RaedNumber(out int number)
+        static int RaedNumber()
         {
-            number = 0;
+            int number = 0;
             bool isWorking = true;
             string userInput;
 
@@ -26,11 +24,11 @@
                 Console.Write("Введите число: ");
                 userInput = Console.ReadLine();
 
-                bool isCorrectExprenssion = int.TryParse(userInput, out number);
+                bool isNumber = int.TryParse(userInput, out number);
 
-                if (isCorrectExprenssion)
+                if (isNumber)
                 {
-                    isWorking = false;
+                    Console.WriteLine($"Преобразование числа прошло верно - {number}");
                 }
                 else
                 {
