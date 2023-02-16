@@ -3,27 +3,20 @@ using System.Xml.Linq;
 
 namespace PersonnalAccounting
 {
-    class Personnal  //Будет 2 массива: 1) фио 2) должность. Описать функцию заполнения массивов досье, функцию форматированного вывода, функцию поиска по фамилии и функцию удаления досье.  Функция расширяет уже имеющийся массив на 1 и дописывает туда новое значение.
-                     //Программа должна быть с меню, которое содержит пункты:  1) добавить досье
-                     //2) вывести все досье(в одну строку через “-” фио и должность с порядковым номером в начале)
-                     //3) удалить досье(Массивы уменьшаются на один элемент.Нужны дополнительные проверки, чтобы не возникало ошибок)
-                     //4) поиск по фамилии     5) выход
+    class Personnal  
     {
         static void Main(string[] args)
         {
             string userInputName = "name";
             string userInputPost = "post";
-            string userInput;
             bool isWorking = true;
             string userInputExit = "exit";
-            int gettingStarted = 1;
-            int continuationWork = 2;
-            string userInputInt;
-            string user1 = "1";
-            string user2 = "2";
-            string user3 = "3";
-            string user4 = "4";
-            string user5 = "5";
+            string userInput;
+            string addDossier = "1";
+            string outputAllDossiers = "2";
+            string deleteDossier = "3";
+            string searchName = "4";
+            string exit = "5";
             string[] post = new string[0];
             string[] name = new string[0];
 
@@ -31,28 +24,27 @@ namespace PersonnalAccounting
 
             while (isWorking)
             {
-                Console.WriteLine($"Длина Name {name.Length}");
-                Console.WriteLine($"\nГлавное меню \nВведите номер интересующего вам пункта: \n{user1} - Добавить досье;\n{user2} - Вывести все досье;" +
-                    $"\n{user3} - Удалить досье;\n{user4} - Поиск по фамилии;\n{user5} - Выход");
-                userInputInt = Console.ReadLine();
+                Console.WriteLine($"\nГлавное меню \nВведите номер интересующего вам пункта: \n{addDossier} - Добавить досье;\n{outputAllDossiers} - Вывести все досье;" +
+                    $"\n{deleteDossier} - Удалить досье;\n{searchName} - Поиск по фамилии;\n{exit} - Выход");
+                userInput = Console.ReadLine();
 
-                if(userInputInt == user1)
+                if(userInput == addDossier)
                 {
-                    CompletionDossierFIO(out name, out post);
+                    CompletionDossier(out name, out post);
                 }
-                else if(userInputInt == user2)
+                else if(userInput == outputAllDossiers)
                 {
-                    
+                    FormattedOutput(ref name, ref post);
                 }
-                else if(userInputInt == user3)
+                else if(userInput == deleteDossier)
                 {
-                    DeleteDossier(name);
+                    DeleteDossier(ref name);
                 }
-                else if(userInputInt == user4)
+                else if(userInput == searchName)
                 {
-                    SearchName(name, post);
+                    SearchName(ref name,ref post);
                 }
-                else if (userInputInt == user5)
+                else if (userInput == exit)
                 {
                     Console.WriteLine("Вы вели команду выхода из программы!");
                     isWorking = false;
@@ -60,22 +52,22 @@ namespace PersonnalAccounting
             }
         }
 
-        static string[] CompletionDossierFIO(out string[] name,out string[] post )
+        static string[] CompletionDossier(out string[] name,out string[] post )
         {
             bool isWorking = true;
             name = new string[0];
             post = new string[0];
-            string nameFIO = "";
-            string namePost = "";
+            string userInputName = "";
+            string userInputPost = "";
             string userInputMain = "main";
             string userInput;
 
             while (isWorking)
             {
                 Console.Write("Введите ваше имя: ");
-                nameFIO = Console.ReadLine();
+                userInputName = Console.ReadLine();
                 Console.Write("Введите вашу должность: ");
-                namePost = Console.ReadLine();
+                userInputPost = Console.ReadLine();
                 Console.Write($"Введите команду <{userInputMain}> для выхода в главное меню: ");
                 userInput = Console.ReadLine();
 
@@ -92,61 +84,63 @@ namespace PersonnalAccounting
                     numFIO[i] = name[i];
                 }
 
-                numFIO[numFIO.Length - 1] = nameFIO;
+                numFIO[numFIO.Length - 1] = userInputName;
                 name = numFIO;
+
 
                 for (int i = 0; i < post.Length; i++)
                 {
                     numPost[i] = post[i];
                 }
 
-                numPost[numPost.Length - 1] = namePost;
+                numPost[numPost.Length - 1] = userInputPost;
                 post = numPost;
             }
 
             return name;
+            return post;
         }
 
-        static void FormattedOutput()
+        static string[] FormattedOutput(ref string[] name, ref string[] post)
         {
-
-        }
-
-        static string[] DeleteDossier(string[] name)
-        {
-            bool isWorking = true;
-
-            while (isWorking)
-            {
-                Console.WriteLine(name.Length);
-                string[] nameFIO = new string[name.Length - 1];
-
-                name = nameFIO;
-
-                Console.WriteLine($"Зарегистрированных резюме на сайте - {name.Length}");
-                isWorking = false;
-            }
-
-            return name;
-        }
-
-        static string[] SearchName(string[] name,string[] post)
-        {
-            bool FIOIsFind = false;
-            string searchFIO;
-            Console.Write("Введите имя автора резюме, которого вы ищете: ");
-            searchFIO = Console.ReadLine();
+            int number = 1;
 
             for(int i = 0; i < name.Length; i++)
             {
-                if(searchFIO == name[i])
+                Console.WriteLine($"{number} - ФИО - {name[i]}; должность - {post[i]}");
+                number++;
+            }
+
+            return name;
+            return post;
+        }
+
+        static string[] DeleteDossier(ref string[] name)
+        {
+            string[] tempName = new string[name.Length - 1];
+
+            tempName = name;
+
+            return tempName;
+        }
+
+        static string[] SearchName(ref string[] name,ref string[] post)
+        {
+            bool findIsName = false;
+            string userInput;
+            Console.Write("Введите имя автора резюме, которого вы ищете: ");
+            userInput = Console.ReadLine();
+
+            for(int i = 0; i < name.Length; i++)
+            {
+                if(userInput.ToLower() == name[i].ToLower())
                 {
                     Console.WriteLine($"Автор резюме {name[i]}, должность: {post[i]}");
-                    FIOIsFind = true;
+                    findIsName = true;
                 }
             }
 
-            if(FIOIsFind == false)
+            if(findIsName == false)
             {
                 Console.WriteLine("Такого пользователя нет!");
             }
