@@ -7,10 +7,7 @@ namespace PersonnalAccounting
     {
         static void Main(string[] args)
         {
-            string userInputName = "name";
-            string userInputPost = "post";
             bool isWorking = true;
-            string userInputExit = "exit";
             string userInput;
             string addDossier = "1";
             string outputAllDossiers = "2";
@@ -30,11 +27,11 @@ namespace PersonnalAccounting
 
                 if(userInput == addDossier)
                 {
-                    CompletionDossier(out name, out post);
+                    CompletionDossier(ref name, ref post);
                 }
                 else if(userInput == outputAllDossiers)
                 {
-                    FormattedOutput(ref name, ref post);
+                    ShowDossiers(name, post);
                 }
                 else if(userInput == deleteDossier)
                 {
@@ -52,11 +49,9 @@ namespace PersonnalAccounting
             }
         }
 
-        static string[] CompletionDossier(out string[] name,out string[] post )
+        static void CompletionDossier(ref string[] name,ref string[] post )
         {
             bool isWorking = true;
-            name = new string[0];
-            post = new string[0];
             string userInputName = "";
             string userInputPost = "";
             string userInputMain = "main";
@@ -87,8 +82,7 @@ namespace PersonnalAccounting
                 numFIO[numFIO.Length - 1] = userInputName;
                 name = numFIO;
 
-
-                for (int i = 0; i < post.Length; i++)
+                for(int i = 0; i < post.Length; i++)
                 {
                     numPost[i] = post[i];
                 }
@@ -96,32 +90,43 @@ namespace PersonnalAccounting
                 numPost[numPost.Length - 1] = userInputPost;
                 post = numPost;
             }
-
-            return name;
-            return post;
         }
 
-        static string[] FormattedOutput(ref string[] name, ref string[] post)
+        static void ShowDossiers(string[] name, string[] post)
         {
             int number = 1;
 
-            for(int i = 0; i < name.Length; i++)
+            if (name.Length != 0)
             {
-                Console.WriteLine($"{number} - ФИО - {name[i]}; должность - {post[i]}");
-                number++;
+                for (int i = 0; i < name.Length; i++)
+                {
+                    Console.WriteLine($"{number} - ФИО - {name[i]}; должность - {post[i]}");
+                    number++;
+                }
             }
-
-            return name;
-            return post;
+            else
+            {
+                Console.WriteLine("Резюме больше нет. Добавьте в разделе <1>");
+            }
         }
 
         static string[] DeleteDossier(ref string[] name)
         {
-            string[] tempName = new string[name.Length - 1];
+            if (name.Length != 0)
+            {
+                string[] tempName = new string[name.Length - 1];
 
-            tempName = name;
+                name = tempName;
 
-            return tempName;
+                Console.WriteLine($"Осталось досье - {name.Length}");
+
+            }
+            else
+            {
+                Console.WriteLine("У вас нет больше досье. Состовьте новые.");
+            }
+
+            return name;
         }
 
         static string[] SearchName(ref string[] name,ref string[] post)
@@ -133,7 +138,7 @@ namespace PersonnalAccounting
 
             for(int i = 0; i < name.Length; i++)
             {
-                if(userInput.ToLower() == name[i].ToLower())
+                if(userInput == name[i])
                 {
                     Console.WriteLine($"Автор резюме {name[i]}, должность: {post[i]}");
                     findIsName = true;
