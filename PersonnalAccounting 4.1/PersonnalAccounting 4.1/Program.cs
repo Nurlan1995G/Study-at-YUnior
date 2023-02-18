@@ -35,7 +35,7 @@ namespace PersonnalAccounting
                 }
                 else if(userInput == deleteDossier)
                 {
-                    DeleteDossier(ref name);
+                    DeleteDossier(ref name, ref post);
                 }
                 else if(userInput == searchName)
                 {
@@ -71,25 +71,22 @@ namespace PersonnalAccounting
                     isWorking = false;
                 }
 
-                string[] numFIO = new string[name.Length + 1];
-                string[] numPost = new string[post.Length + 1];
-
-                for (int i = 0; i < name.Length; i++)
-                {
-                    numFIO[i] = name[i];
-                }
-
-                numFIO[numFIO.Length - 1] = userInputName;
-                name = numFIO;
-
-                for(int i = 0; i < post.Length; i++)
-                {
-                    numPost[i] = post[i];
-                }
-
-                numPost[numPost.Length - 1] = userInputPost;
-                post = numPost;
+                CompletionInformation(ref name, userInputName);
+                CompletionInformation(ref post, userInputPost);
             }
+        }
+
+        static void CompletionInformation(ref string[] name, string userInputName)
+        {
+            string[] numFIO = new string[name.Length + 1];
+
+            for (int i = 0; i < name.Length; i++)
+            {
+                numFIO[i] = name[i];
+            }
+
+            numFIO[numFIO.Length - 1] = userInputName;
+            name = numFIO;
         }
 
         static void ShowDossiers(string[] name, string[] post)
@@ -110,37 +107,65 @@ namespace PersonnalAccounting
             }
         }
 
-        static string[] DeleteDossier(ref string[] name)
+        static void DeleteDossier(ref string[] name, ref string[] post)
         {
             if (name.Length != 0)
             {
-                string[] tempName = new string[name.Length - 1];
+                Console.Write("Введите номер досье, которое вы хотите удалить: ");
+                int indexRemoveDossier = Convert.ToInt32(Console.ReadLine()) - 1;
 
-                name = tempName;
-
-                Console.WriteLine($"Осталось досье - {name.Length}");
-
+                if(name.Length - 1 < indexRemoveDossier || indexRemoveDossier < 0)
+                {
+                    Console.WriteLine("Такого досье нет!");
+                }
+                else
+                {
+                    DeleteInformation(ref name, indexRemoveDossier);
+                    DeleteInformation(ref post, indexRemoveDossier);
+                    Console.WriteLine($"Вы успешно удалили {name.Length - 1} досье");
+                }
             }
             else
             {
                 Console.WriteLine("У вас нет больше досье. Состовьте новые.");
             }
+        }
 
-            return name;
+        static void DeleteInformation(ref string[] name, int indexRemoveDossier)
+        {
+            string[] tempName = new string[name.Length - 1];
+
+            for(int i = 0; i < indexRemoveDossier; i++)
+            {
+                tempName[i] = name[i];
+            }
+
+            for (int i = indexRemoveDossier; i < tempName.Length; i++ )
+            {
+                tempName[i] = name[i + 1];
+            }
+
+            name = tempName;
         }
 
         static string[] SearchName(ref string[] name,ref string[] post)
         {
             bool findIsName = false;
-            string userInput;
-            Console.Write("Введите имя автора резюме, которого вы ищете: ");
-            userInput = Console.ReadLine();
+            int number = 0;
+            string userInputName;
+            string[] tempName;
+            
+            Console.Write("Введите фамилию автора резюме, которого вы ищете: ");
+            userInputName = Console.ReadLine();
 
             for(int i = 0; i < name.Length; i++)
             {
-                if(userInput == name[i])
+                number++;
+                tempName = name[i].Split(' ');
+
+                if(userInputName == tempName[0])
                 {
-                    Console.WriteLine($"Автор резюме {name[i]}, должность: {post[i]}");
+                    Console.WriteLine($"Автор резюме - {number}) {name[i]}, должность: {post[i]}");
                     findIsName = true;
                 }
             }
