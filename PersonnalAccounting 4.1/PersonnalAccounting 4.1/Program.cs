@@ -39,7 +39,7 @@ namespace PersonnalAccounting
                 }
                 else if(userInput == searchName)
                 {
-                    SearchName(ref name,ref post);
+                    SearchName(name, post);
                 }
                 else if (userInput == exit)
                 {
@@ -148,7 +148,7 @@ namespace PersonnalAccounting
             name = tempName;
         }
 
-        static string[] SearchName(ref string[] name,ref string[] post)
+        static void SearchName(string[] name,string[] post)
         {
             bool findIsName = false;
             int number = 0;
@@ -163,7 +163,7 @@ namespace PersonnalAccounting
                 number++;
                 tempName = name[i].Split(' ');
 
-                if(userInputName == tempName[0])
+                if(userInputName.ToLower() == tempName[0].ToLower())
                 {
                     Console.WriteLine($"Автор резюме - {number}) {name[i]}, должность: {post[i]}");
                     findIsName = true;
@@ -174,8 +174,6 @@ namespace PersonnalAccounting
             {
                 Console.WriteLine("Такого пользователя нет!");
             }
-
-            return name;
         }
     }
 }
