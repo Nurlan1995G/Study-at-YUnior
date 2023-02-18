@@ -78,15 +78,15 @@ namespace PersonnalAccounting
 
         static void CompletionInformation(ref string[] name, string userInputName)
         {
-            string[] numFIO = new string[name.Length + 1];
+            string[] tempName = new string[name.Length + 1];
 
             for (int i = 0; i < name.Length; i++)
             {
-                numFIO[i] = name[i];
+                tempName[i] = name[i];
             }
 
-            numFIO[numFIO.Length - 1] = userInputName;
-            name = numFIO;
+            tempName[tempName.Length - 1] = userInputName;
+            name = tempName;
         }
 
         static void ShowDossiers(string[] name, string[] post)
