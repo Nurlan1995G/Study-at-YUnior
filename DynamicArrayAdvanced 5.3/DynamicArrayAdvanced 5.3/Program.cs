@@ -52,22 +52,16 @@ namespace DynamicArrayAdvanced
         static void AddNumber(ref List<int> numbers, string userInput)
         {
             int number;
-            bool isWork = true;
 
-            while (isWork)
+            bool isNumbers = int.TryParse(userInput, out number);
+
+            if (isNumbers)
             {
-                bool isNumbers = int.TryParse(userInput, out number);
-
-                if (isNumbers)
-                {
-                    numbers.Add(number);
-                    isWork = false;
-                }
-                else
-                {
-                    Console.WriteLine("Ошибка!");
-                    isWork = false;
-                }
+                numbers.Add(number);
+            }
+            else
+            {
+                Console.WriteLine("Ошибка!");
             }
         }
     }
