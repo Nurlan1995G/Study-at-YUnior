@@ -12,6 +12,7 @@ namespace DynamicArrayAdvanced
             string userInput;
             int number;
             bool isWorkProgress = true;
+            int receivedSum;
 
             Console.WriteLine($"Вы можете тут водить числа и после того как введете команду - {userInputSum}, выведется сумма ваших чисел. Либо вести команду - {userInputExit}, выполнится выход из программы!");
 
@@ -27,19 +28,45 @@ namespace DynamicArrayAdvanced
                 }
                 else if(userInput == userInputSum)
                 {
-                    int receivedSum = 0;
-
-                    for(int i = 0; i < numbers.Count; i++)
-                    {
-                        receivedSum += numbers[i];
-                    }
-
-                    Console.WriteLine($"Сумма чисел равна - {receivedSum}");
+                    SummatetNumbers(numbers, out receivedSum);
                 }
                 else
                 {
-                    number = int.Parse(userInput);
+                    AddNumber(ref numbers, userInput);
+                }
+            }
+        }
+
+        static void SummatetNumbers(List<int> numbers, out int receivedSum)
+        {
+            receivedSum = 0;
+
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                receivedSum += numbers[i];
+            }
+
+            Console.WriteLine($"Сумма чисел равна - {receivedSum}");
+        }
+
+        static void AddNumber(ref List<int> numbers, string userInput)
+        {
+            int number;
+            bool isWork = true;
+
+            while (isWork)
+            {
+                bool isNumbers = int.TryParse(userInput, out number);
+
+                if (isNumbers)
+                {
                     numbers.Add(number);
+                    isWork = false;
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка!");
+                    isWork = false;
                 }
             }
         }
