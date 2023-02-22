@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\bin\Debug\net6.0\AdvancedPersonnelAccounting 5.4.exe
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\bin\Debug\net6.0\AdvancedPersonnelAccounting 5.4.deps.json
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\bin\Debug\net6.0\AdvancedPersonnelAccounting 5.4.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\bin\Debug\net6.0\AdvancedPersonnelAccounting 5.4.dll
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\bin\Debug\net6.0\AdvancedPersonnelAccounting 5.4.pdb
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\obj\Debug\net6.0\AdvancedPersonnelAccounting 5.4.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\obj\Debug\net6.0\AdvancedPersonnelAccounting 5.4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\obj\Debug\net6.0\AdvancedPersonnelAccounting 5.4.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\obj\Debug\net6.0\AdvancedPersonnelAccounting 5.4.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\obj\Debug\net6.0\AdvancedPersonnelAccounting 5.4.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\obj\Debug\net6.0\AdvancedPersonnelAccounting 5.4.dll
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\obj\Debug\net6.0\refint\AdvancedPersonnelAccounting 5.4.dll
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\obj\Debug\net6.0\AdvancedPersonnelAccounting 5.4.pdb
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\obj\Debug\net6.0\AdvancedPersonnelAccounting 5.4.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\AdvancedPersonnelAccounting 5.4\AdvancedPersonnelAccounting 5.4\obj\Debug\net6.0\ref\AdvancedPersonnelAccounting 5.4.dll
