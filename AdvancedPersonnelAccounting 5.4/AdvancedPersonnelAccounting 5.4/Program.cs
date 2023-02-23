@@ -6,8 +6,8 @@ namespace AdvancedPersonnel
     {
         static void Main(string[] args)
         {
-            List<string> name = new List<string>();
-            List<string> post = new List<string>();
+            List<string> names = new List<string>();
+            List<string> posts = new List<string>();
             bool isWorking = true;
             string userInput;
             string addDossier = "1";
@@ -22,15 +22,15 @@ namespace AdvancedPersonnel
 
                 if(userInput == addDossier)
                 {
-                    CompletionDossier(name, post);
+                    AddDossier(names, posts);
                 }
                 else if(userInput == outputAllDossiers)
                 {
-                    ShowDossiers(name, post);
+                    ShowDossiers(names, posts);
                 }
                 else if(userInput == deleteDossier)
                 {
-                    DeleteDossier(name, post);
+                    DeleteDossier(names, posts);
                 }
                 else if(userInput == exit)
                 {
@@ -40,7 +40,7 @@ namespace AdvancedPersonnel
             }
         }
 
-        static void CompletionDossier(List<string> name, List<string> post)
+        static void AddDossier(List<string> names, List<string> posts)
         {
             bool isWorking = true;
             string userInputName = "";
@@ -62,25 +62,25 @@ namespace AdvancedPersonnel
                     isWorking = false;
                 }
 
-                CompletionInformation(name, userInputName);
-                CompletionInformation(post, userInputPost);
+                names.Add(userInputName);
+                posts.Add(userInputPost);
             }
         }
 
-        static void CompletionInformation(List<string> name, string userInput)
+        static void AddDossierInformation(List<string> name, string userInput)
         {
             name.Add(userInput);
         }
 
-        static void ShowDossiers(List<string> name, List<string> post)
+        static void ShowDossiers(List<string> names, List<string> posts)
         {
             int number = 1;
 
-            if(name.Count != 0)
+            if(names.Count != 0)
             {
-                for (int i = 0; i < name.Count; i++) 
+                for (int i = 0; i < names.Count; i++) 
                 {
-                    Console.WriteLine($"{number}) ФИО - {name[i]}; должность - {post[i]}");
+                    Console.WriteLine($"{number}) ФИО - {names[i]}; должность - {posts[i]}");
                     number++;
                 }
             }
@@ -90,35 +90,30 @@ namespace AdvancedPersonnel
             }
         }
 
-        static void DeleteDossier(List<string> name, List<string> post)
+        static void DeleteDossier(List<string> names, List<string> posts)
         {
             int initialValue = 1;
 
-            if(name.Count != 0)
+            if(names.Count != 0)
             {
                 Console.Write("Введите индекс досье, которое вы хотите удалить: ");
                 int indexRemoveDossier = Convert.ToInt32(Console.ReadLine()) - initialValue;
 
-                if(name.Count - initialValue < indexRemoveDossier || indexRemoveDossier < 0)
+                if(names.Count - initialValue < indexRemoveDossier || indexRemoveDossier < 0)
                 {
                     Console.WriteLine($"Такого досье с индексом {indexRemoveDossier} не существует!");
                 }
                 else
                 {
-                    DeleteInformation(name, indexRemoveDossier);
-                    DeleteInformation(post, indexRemoveDossier);
-                    Console.WriteLine($"Вы успешно удалили {name.Count} досье");
+                    names.RemoveAt(indexRemoveDossier);
+                    posts.RemoveAt(indexRemoveDossier);
+                    Console.WriteLine($"Вы успешно удалили {names.Count} досье");
                 }
             }
             else
             {
                 Console.WriteLine("Больше досье нет. Добавьте пожалуйста в разделе <1>");
             }
-        }
-
-        static void DeleteInformation(List<string> name, int indexRemove)
-        {
-            name.RemoveAt(indexRemove);
         }
     }
 }
