@@ -93,21 +93,32 @@ namespace AdvancedPersonnel
         static void DeleteDossier(List<string> names, List<string> posts)
         {
             int initialValue = 1;
+            int number;
 
             if(names.Count != 0)
             {
                 Console.Write("Введите индекс досье, которое вы хотите удалить: ");
-                int indexRemoveDossier = Convert.ToInt32(Console.ReadLine()) - initialValue;
+                string indexRemoveDossier = Console.ReadLine();
 
-                if(names.Count - initialValue < indexRemoveDossier || indexRemoveDossier < 0)
+                bool isNumbers = int.TryParse(indexRemoveDossier, out number);
+
+                if (isNumbers)
                 {
-                    Console.WriteLine($"Такого досье с индексом {indexRemoveDossier} не существует!");
+
+                    if (names.Count - initialValue < number || number < 0)
+                    {
+                        Console.WriteLine($"Такого досье с номером {number} не существует!");
+                    }
+                    else
+                    {
+                        names.RemoveAt(number - initialValue);
+                        posts.RemoveAt(number - initialValue);
+                        Console.WriteLine($"Вы успешно удалили {names.Count} досье");
+                    }
                 }
                 else
                 {
-                    names.RemoveAt(indexRemoveDossier);
-                    posts.RemoveAt(indexRemoveDossier);
-                    Console.WriteLine($"Вы успешно удалили {names.Count} досье");
+                    Console.WriteLine("Ошибка! Введенна некоректная команда.");
                 }
             }
             else
