@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParenthesisExpressionsCycles 2.11", "ParenthesisExpressionsCycles 2.11\ParenthesisExpressionsCycles 2.11.csproj", "{79E0ECFA-242E-49BA-B2D7-0ABEB4BD070E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79E0ECFA-242E-49BA-B2D7-0ABEB4BD070E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E0ECFA-242E-49BA-B2D7-0ABEB4BD070E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E0ECFA-242E-49BA-B2D7-0ABEB4BD070E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E0ECFA-242E-49BA-B2D7-0ABEB4BD070E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2E29BAC-5366-4741-923F-640213F4DA94}
+	EndGlobalSection
+EndGlobal
