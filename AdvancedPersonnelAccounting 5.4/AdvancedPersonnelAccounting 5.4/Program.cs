@@ -106,8 +106,8 @@ namespace AdvancedPersonnel
                     }
                     else
                     {
-                        names.RemoveAt(number - 1);
-                        posts.RemoveAt(number - 1);
+                        names.RemoveAt(number - initialValue);
+                        posts.RemoveAt(number - initialValue);
                         Console.WriteLine($"Вы успешно удалили {names.Count} досье");
                     }
                 }
