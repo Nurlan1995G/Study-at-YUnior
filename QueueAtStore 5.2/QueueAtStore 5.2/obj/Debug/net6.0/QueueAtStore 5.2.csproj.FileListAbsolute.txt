@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\bin\Debug\net6.0\QueueAtStore 5.2.exe
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\bin\Debug\net6.0\QueueAtStore 5.2.deps.json
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\bin\Debug\net6.0\QueueAtStore 5.2.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\bin\Debug\net6.0\QueueAtStore 5.2.dll
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\bin\Debug\net6.0\QueueAtStore 5.2.pdb
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\obj\Debug\net6.0\QueueAtStore 5.2.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\obj\Debug\net6.0\QueueAtStore 5.2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\obj\Debug\net6.0\QueueAtStore 5.2.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\obj\Debug\net6.0\QueueAtStore 5.2.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\obj\Debug\net6.0\QueueAtStore 5.2.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\obj\Debug\net6.0\QueueAtStore 5.2.dll
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\obj\Debug\net6.0\refint\QueueAtStore 5.2.dll
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\obj\Debug\net6.0\QueueAtStore 5.2.pdb
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\obj\Debug\net6.0\QueueAtStore 5.2.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\QueueAtStore 5.2\QueueAtStore 5.2\obj\Debug\net6.0\ref\QueueAtStore 5.2.dll
