@@ -67,11 +67,6 @@ namespace AdvancedPersonnel
             }
         }
 
-        static void AddDossierInformation(List<string> name, string userInput)
-        {
-            name.Add(userInput);
-        }
-
         static void ShowDossiers(List<string> names, List<string> posts)
         {
             int number = 1;
@@ -105,14 +100,14 @@ namespace AdvancedPersonnel
                 if (isNumbers)
                 {
 
-                    if (names.Count - initialValue < number || number < 0)
+                    if (names.Count < number || number < 0)
                     {
                         Console.WriteLine($"Такого досье с номером {number} не существует!");
                     }
                     else
                     {
-                        names.RemoveAt(number - initialValue);
-                        posts.RemoveAt(number - initialValue);
+                        names.RemoveAt(number - 1);
+                        posts.RemoveAt(number - 1);
                         Console.WriteLine($"Вы успешно удалили {names.Count} досье");
                     }
                 }
