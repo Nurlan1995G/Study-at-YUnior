@@ -30,12 +30,16 @@ namespace QueueAtStore
         static void CreateQueue (Queue<int> buys)
         {
             Random random = new Random();
-            int randomQueue = random.Next(5, 11);
             int randomNumberBuys = 0;
+            int beginningQueue = 5;
+            int endingQueue = 11;
+            int beginningNumberBuys = 1;
+            int endingNumberBuys = 31;
+            int randomQueue = random.Next(beginningQueue, endingQueue);
 
             for (int i = 0; i < randomQueue; i++)
             {
-                randomNumberBuys = random.Next(1, 21);
+                randomNumberBuys = random.Next(beginningNumberBuys, endingNumberBuys);
                 buys.Enqueue(randomNumberBuys);
             }
 
