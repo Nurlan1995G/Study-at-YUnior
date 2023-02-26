@@ -10,7 +10,7 @@ namespace ExplanatoryDictionary
             string userInput;
             bool isWorking = true;
 
-            AddCities(cities);
+            FillCities(cities);
 
             while (isWorking)
             {
@@ -34,7 +34,7 @@ namespace ExplanatoryDictionary
             }
         }
 
-        static void AddCities(Dictionary<string,string> cities)
+        static void FillCities(Dictionary<string,string> cities)
         {
             cities.Add("Москва", "Столица России и город с численностью 13 млн.человек. Первое письменное упоминание о Москве относится к 1147 году.");
             cities.Add("Санкт-Петербург", "Второй город по размерам и численностью России. Численность более 5 млн.человек. История Санкт-Петербурга начинается с 1703 года со строительства Петропавловской крепости.");
