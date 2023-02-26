@@ -45,9 +45,9 @@ namespace QueueAtStore
 
             Console.WriteLine($"Длина очереди - {buys.Count} покупателей");
 
-            foreach (int buy in buys)
+            foreach (int sumBuys in buys)
             {
-                Console.WriteLine($"Сумма покупки - {buy}$");
+                Console.WriteLine($"Сумма покупки - {sumBuys}$");
             }
 
             Console.Write("Нажмите на любую клавишу для продолжения: ");
@@ -58,14 +58,14 @@ namespace QueueAtStore
         {
             Console.Clear();
             balanceBuys += buys.Dequeue();
-            Console.WriteLine($"Баланс - {balanceBuys}$");
+            Console.WriteLine($"Баланс - {balanceBuys}$"); 
         }
 
         static void ShowQueue(Queue<int> buys)
         {
-            foreach (int buyNum in buys)
+            foreach (int sumBuys in buys)
             {
-                Console.WriteLine($"Сумма покупки - {buyNum}$");
+                Console.WriteLine($"Сумма покупки - {sumBuys}$");
             }
 
             Console.Write("Нажмите на любую клавишу для продолжения: ");
