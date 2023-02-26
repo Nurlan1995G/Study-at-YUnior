@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\bin\Debug\net6.0\OOPKlass 6.1.exe
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\bin\Debug\net6.0\OOPKlass 6.1.deps.json
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\bin\Debug\net6.0\OOPKlass 6.1.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\bin\Debug\net6.0\OOPKlass 6.1.dll
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\bin\Debug\net6.0\OOPKlass 6.1.pdb
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\obj\Debug\net6.0\OOPKlass 6.1.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\obj\Debug\net6.0\OOPKlass 6.1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\obj\Debug\net6.0\OOPKlass 6.1.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\obj\Debug\net6.0\OOPKlass 6.1.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\obj\Debug\net6.0\OOPKlass 6.1.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\obj\Debug\net6.0\OOPKlass 6.1.dll
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\obj\Debug\net6.0\refint\OOPKlass 6.1.dll
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\obj\Debug\net6.0\OOPKlass 6.1.pdb
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\obj\Debug\net6.0\OOPKlass 6.1.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\OOPKlass 6.1\OOPKlass 6.1\obj\Debug\net6.0\ref\OOPKlass 6.1.dll
