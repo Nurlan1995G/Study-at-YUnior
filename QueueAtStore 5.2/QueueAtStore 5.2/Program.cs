@@ -10,13 +10,13 @@ namespace QueueAtStore
             Queue<int> buys = new Queue<int>();
             bool isWorking = true;
 
-            CreateQueue(buys);
+            FillQueue(buys);
 
             while (isWorking)
             {
                 if (buys.Count > 0)
                 {
-                    SubstractBuy(buys, ref balanceBuys);
+                    balanceBuys = SubstractBuy(buys, balanceBuys);
                     ShowQueue(buys);
                 }
                 else
@@ -27,7 +27,7 @@ namespace QueueAtStore
             }
         }
 
-        static void CreateQueue (Queue<int> buys)
+        static void FillQueue (Queue<int> buys)
         {
             Random random = new Random();
             int randomNumberBuys = 0;
@@ -54,11 +54,13 @@ namespace QueueAtStore
             Console.ReadKey();
         }
 
-        static void SubstractBuy(Queue<int> buys, ref int balanceBuys)
+        static int SubstractBuy(Queue<int> buys, int balanceBuys)
         {
             Console.Clear();
             balanceBuys += buys.Dequeue();
-            Console.WriteLine($"Баланс - {balanceBuys}$"); 
+            Console.WriteLine($"Баланс - {balanceBuys}$");
+
+            return balanceBuys;
         }
 
         static void ShowQueue(Queue<int> buys)
