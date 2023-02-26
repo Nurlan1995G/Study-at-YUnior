@@ -11,20 +11,20 @@ namespace AdvancedPersonnel
             bool isWorking = true;
             string userInput;
             string addDossier = "1";
-            string outputAllDossiers = "2";
+            string showAllDossiers = "2";
             string deleteDossier = "3";
             string exit = "4";
 
             while (isWorking)
             {
-                Console.WriteLine($"\nГлавное меню \nВведите номер интересующего вам пункта: \n{addDossier} - Добавить досье;\n{outputAllDossiers} - Вывести все досье;\n{deleteDossier} - Удалить досье;\n{exit} - Выход");
+                Console.WriteLine($"\nГлавное меню \nВведите номер интересующего вам пункта: \n{addDossier} - Добавить досье;\n{showAllDossiers} - Вывести все досье;\n{deleteDossier} - Удалить досье;\n{exit} - Выход");
                 userInput = Console.ReadLine();
 
                 if(userInput == addDossier)
                 {
                     AddDossier(names, posts);
                 }
-                else if(userInput == outputAllDossiers)
+                else if(userInput == showAllDossiers)
                 {
                     ShowDossiers(names, posts);
                 }
@@ -100,7 +100,7 @@ namespace AdvancedPersonnel
                 if (isNumbers)
                 {
 
-                    if (names.Count < number || number < 0)
+                    if (names.Count < number || number <= 0)
                     {
                         Console.WriteLine($"Такого досье с номером {number} не существует!");
                     }
