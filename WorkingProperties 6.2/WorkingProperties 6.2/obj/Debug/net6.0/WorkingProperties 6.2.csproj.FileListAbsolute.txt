@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\bin\Debug\net6.0\WorkingProperties 6.2.exe
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\bin\Debug\net6.0\WorkingProperties 6.2.deps.json
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\bin\Debug\net6.0\WorkingProperties 6.2.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\bin\Debug\net6.0\WorkingProperties 6.2.dll
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\bin\Debug\net6.0\WorkingProperties 6.2.pdb
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\obj\Debug\net6.0\WorkingProperties 6.2.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\obj\Debug\net6.0\WorkingProperties 6.2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\obj\Debug\net6.0\WorkingProperties 6.2.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\obj\Debug\net6.0\WorkingProperties 6.2.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\obj\Debug\net6.0\WorkingProperties 6.2.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\obj\Debug\net6.0\WorkingProperties 6.2.dll
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\obj\Debug\net6.0\refint\WorkingProperties 6.2.dll
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\obj\Debug\net6.0\WorkingProperties 6.2.pdb
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\obj\Debug\net6.0\WorkingProperties 6.2.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\WorkingProperties 6.2\WorkingProperties 6.2\obj\Debug\net6.0\ref\WorkingProperties 6.2.dll
