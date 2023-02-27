@@ -8,50 +8,30 @@ namespace QueueAtStore
         {
             int balanceBuys = 0;
             Queue<int> buys = new Queue<int>();
-            bool isWorking = true;
 
             FillQueue(buys);
-
-            while (isWorking)
-            {
-                if (buys.Count > 0)
-                {
-                    balanceBuys = SubstractBuy(buys, balanceBuys);
-                    ShowQueue(buys);
-                }
-                else
-                {
-                    Console.WriteLine($"Очередь закончилась. Баланс составляется - {balanceBuys} долларов");
-                    isWorking = false;
-                }
-            }
+            Serve(buys, balanceBuys);
         }
 
         static void FillQueue (Queue<int> buys)
         {
             Random random = new Random();
             int randomNumberBuys = 0;
-            int beginningQueue = 5;
-            int endingQueue = 11;
-            int beginningNumberBuys = 1;
-            int endingNumberBuys = 31;
-            int randomQueue = random.Next(beginningQueue, endingQueue);
+            int minClientsCount = 5;
+            int maxClientsCount = 11;
+            int minValue = 1;
+            int maxValue = 31;
+            int randomQueue = random.Next(minClientsCount, maxClientsCount);
 
             for (int i = 0; i < randomQueue; i++)
             {
-                randomNumberBuys = random.Next(beginningNumberBuys, endingNumberBuys);
+                randomNumberBuys = random.Next(minValue, maxValue);
                 buys.Enqueue(randomNumberBuys);
             }
 
             Console.WriteLine($"Длина очереди - {buys.Count} покупателей");
 
-            foreach (int sumBuys in buys)
-            {
-                Console.WriteLine($"Сумма покупки - {sumBuys}$");
-            }
-
-            Console.Write("Нажмите на любую клавишу для продолжения: ");
-            Console.ReadKey();
+            ShowQueue(buys);
         }
 
         static int SubstractBuy(Queue<int> buys, int balanceBuys)
@@ -72,6 +52,25 @@ namespace QueueAtStore
 
             Console.Write("Нажмите на любую клавишу для продолжения: ");
             Console.ReadKey();
+        }
+
+        static void Serve(Queue<int> buys, int balanceBuys)
+        {
+            bool isWorking = true;
+
+            while (isWorking)
+            {
+                if (buys.Count > 0)
+                {
+                    balanceBuys = SubstractBuy(buys, balanceBuys);
+                    ShowQueue(buys);
+                }
+                else
+                {
+                    Console.WriteLine($"Очередь закончилась. Баланс составляется - {balanceBuys} долларов");
+                    isWorking = false;
+                }
+            }
         }
     }
 }
