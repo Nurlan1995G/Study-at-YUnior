@@ -16,17 +16,17 @@ namespace QueueAtStore
         static void FillQueue (Queue<int> buys)
         {
             Random random = new Random();
-            int randomNumberBuys = 0;
-            int minClientsCount = 5;
-            int maxClientsCount = 11;
+            int randomSumBuys = 0;
+            int minCountClients = 5;
+            int maxCountClients = 11;
             int minValue = 1;
             int maxValue = 31;
-            int randomQueue = random.Next(minClientsCount, maxClientsCount);
+            int randomCountClients = random.Next(minCountClients, maxCountClients);
 
-            for (int i = 0; i < randomQueue; i++)
+            for (int i = 0; i < randomCountClients; i++)
             {
-                randomNumberBuys = random.Next(minValue, maxValue);
-                buys.Enqueue(randomNumberBuys);
+                randomSumBuys = random.Next(minValue, maxValue);
+                buys.Enqueue(randomSumBuys);
             }
 
             Console.WriteLine($"Длина очереди - {buys.Count} покупателей");
