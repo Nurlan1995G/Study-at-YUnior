@@ -32,33 +32,17 @@ namespace Properties
 
     class Player
     {
-        private int _playerPositionX;
-        private int _playerPositionY;
-        private char _playerSymbol;
+        public int PlayerPositionX { get; private set; }
 
-        public int PlayerPositionX
-        {
-            get { return _playerPositionX; }
-            private set { _playerPositionX = value; }
-        }
+        public int PlayerPositionY { get; private set; }
 
-        public int PlayerPositionY
-        {
-            get { return _playerPositionY; }
-            private set { _playerPositionY = value; }
-        }
-
-        public char PlayerSymbol
-        {
-            get { return _playerSymbol; }
-            private set { _playerSymbol = value; }  
-        }
+        public char PlayerSymbol { get; private set; }
 
         public Player(int playerPositionX, int playerPositionY, char playerSymbol)
         {
-            _playerPositionX = playerPositionX;
-            _playerPositionY = playerPositionY;
-            _playerSymbol = playerSymbol;
+            PlayerPositionX = playerPositionX;
+            PlayerPositionY = playerPositionY;
+            PlayerSymbol = playerSymbol;
         }
     }
 }
