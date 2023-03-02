@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\bin\Debug\net6.0\Project Test.exe
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\bin\Debug\net6.0\Project Test.deps.json
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\bin\Debug\net6.0\Project Test.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\bin\Debug\net6.0\Project Test.dll
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\bin\Debug\net6.0\Project Test.pdb
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\obj\Debug\net6.0\Project Test.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\obj\Debug\net6.0\Project Test.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\obj\Debug\net6.0\Project Test.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\obj\Debug\net6.0\Project Test.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\obj\Debug\net6.0\Project Test.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\obj\Debug\net6.0\Project Test.dll
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\obj\Debug\net6.0\refint\Project Test.dll
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\obj\Debug\net6.0\Project Test.pdb
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\obj\Debug\net6.0\Project Test.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\Project Test\Project Test\obj\Debug\net6.0\ref\Project Test.dll
