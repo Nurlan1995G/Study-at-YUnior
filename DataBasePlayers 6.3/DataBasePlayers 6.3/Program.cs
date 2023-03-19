@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         { 
-            DataBase dataBase = new DataBase();
+            Database dataBase = new Database();
 
             string AddPlayer = "1";
             string BanPlayer = "2";
@@ -17,7 +17,7 @@
             while (isWorking) 
             {
                 Console.WriteLine($"Введите команду с меню!");
-                Console.WriteLine($"\n{AddPlayer} - Добавление персонажа;\n{BanPlayer} - Забанить персонажа;\n{UnBanPlayer} - Разбанить персонажа;\n{DeletePlayer} - Удалить персонажа;\n{ShowInfoPlayer} - Вывод информации о всех персонажах;\n{Exit} - выход из программы.");
+                Console.WriteLine($"\n{AddPlayer} - Добавление персонажа;\n{BanPlayer} - Забанить персонажа;\n{UnBanPlayer} - Разбанить персонажа;\n{DeletePlayer} - Удалить персонажа;\n{ShowInfoPlayer} - Вывод информации о всех персонажах;\n{Exit} - выход из программы.\n");
                 string userInput = Console.ReadLine();
                 bool isNumber = int.TryParse(userInput, out int number);
 
@@ -33,7 +33,7 @@
                     }
                     else if (userInput == UnBanPlayer)
                     {
-                        dataBase.UnBanPlayer();
+                        dataBase.UnbanPlayer();
                     }
                     else if (userInput == DeletePlayer)
                     {
@@ -66,32 +66,34 @@
     {
         private static int _number;
 
-        public string NickName { get; private set; }
-        public int LevelPlayer { get; private set; }
-        public bool isBan { get; private set; }
-        public int UniqueNumberPlayer { get; private set; }
-
         public Player(string nickName, int levelPlayer)
         {
             NickName = nickName;
-            LevelPlayer = levelPlayer;
+            Level = levelPlayer;
             isBan = false;
             CreateNumber();
         }
 
+        public string NickName { get; private set; }
+        public int Level { get; private set; }
+        public bool isBan { get; private set; }
+        public int UniqueNumber { get; private set; }
+
         public void CreateNumber()
         {
-            UniqueNumberPlayer = ++_number;
+            UniqueNumber = ++_number;
         }
 
         public void Ban()
         {
             isBan = true;
+            Console.WriteLine("Пользователь забанен!");
         }
 
-        public void UnBan()
+        public void Unban()
         {
             isBan = false;
+            Console.WriteLine("Пользователь разбанен!");
         }
 
         public void ShowInfo()
@@ -105,14 +107,13 @@
                 Console.WriteLine("\nНе забанен!");
             }
 
-            Console.WriteLine($"Уникальный номер - {UniqueNumberPlayer} | Ник - {NickName} | уровень - {LevelPlayer}");
+            Console.WriteLine($"Уникальный номер - {UniqueNumber} | Ник - {NickName} | уровень - {Level}");
         }
     }
 
-
-    class DataBase
+    class Database
     {
-        Random random = new Random();
+        private Random random = new Random();
         private List<Player> _players = new List<Player>();
 
         public void AddPlayer()
@@ -130,10 +131,10 @@
 
         public void DeletePlayer()
         {
-            if(GetPlayer(out Player player))
+            if(TryGetPlayer(out Player player))
             {
                 _players.Remove(player);
-                Console.WriteLine($"\nИгрок с номером {player.UniqueNumberPlayer} удален!");
+                Console.WriteLine($"\nИгрок с номером {player.UniqueNumber} удален!");
             }
             else
             {
@@ -143,7 +144,7 @@
 
         public void BanPlayer()
         {
-            if(GetPlayer(out Player player))
+            if(TryGetPlayer(out Player player))
             {
                 player.Ban();
             }
@@ -153,11 +154,11 @@
             }
         }
 
-        public void UnBanPlayer()
+        public void UnbanPlayer()
         {
-            if(GetPlayer(out Player player))
+            if(TryGetPlayer(out Player player))
             {
-                player.UnBan();
+                player.Unban();
             }
             else
             {
@@ -180,7 +181,7 @@
             }
         }
 
-        public bool GetPlayer(out Player player)
+        public bool TryGetPlayer(out Player player)
         {
             player = null;
 
@@ -191,7 +192,7 @@
             {
                 for (int i = 0; i < _players.Count; i++)
                 {
-                    if (uniqueNumberToFind == _players[i].UniqueNumberPlayer)
+                    if (uniqueNumberToFind == _players[i].UniqueNumber)
                     {
                         player = _players[i];
                         return true;
