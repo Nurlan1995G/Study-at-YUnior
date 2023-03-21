@@ -4,46 +4,46 @@
     {
         static void Main(string[] args)
         { 
-            Database dataBase = new Database();
+            Database database = new Database();
 
-            string AddPlayer = "1";
-            string BanPlayer = "2";
-            string UnBanPlayer = "3";
-            string DeletePlayer = "4";
-            string ShowInfoPlayer = "5";
-            string Exit = "6";
+            string addPlayer = "1";
+            string banPlayer = "2";
+            string unbanPlayer = "3";
+            string deletePlayer = "4";
+            string showInfoPlayer = "5";
+            string exit = "6";
             bool isWorking = true;
             
             while (isWorking) 
             {
                 Console.WriteLine($"Введите команду с меню!");
-                Console.WriteLine($"\n{AddPlayer} - Добавление персонажа;\n{BanPlayer} - Забанить персонажа;\n{UnBanPlayer} - Разбанить персонажа;\n{DeletePlayer} - Удалить персонажа;\n{ShowInfoPlayer} - Вывод информации о всех персонажах;\n{Exit} - выход из программы.\n");
+                Console.WriteLine($"\n{addPlayer} - Добавление персонажа;\n{banPlayer} - Забанить персонажа;\n{unbanPlayer} - Разбанить персонажа;\n{deletePlayer} - Удалить персонажа;\n{showInfoPlayer} - Вывод информации о всех персонажах;\n{exit} - выход из программы.\n");
                 string userInput = Console.ReadLine();
                 bool isNumber = int.TryParse(userInput, out int number);
 
                 if (isNumber)
                 {
-                    if (userInput == AddPlayer)
+                    if (userInput == addPlayer)
                     {
-                        dataBase.AddPlayer();
+                        database.AddPlayer();
                     }
-                    else if (userInput == BanPlayer)
+                    else if (userInput == banPlayer)
                     {
-                        dataBase.BanPlayer();
+                        database.BanPlayer();
                     }
-                    else if (userInput == UnBanPlayer)
+                    else if (userInput == unbanPlayer)
                     {
-                        dataBase.UnbanPlayer();
+                        database.UnbanPlayer();
                     }
-                    else if (userInput == DeletePlayer)
+                    else if (userInput == deletePlayer)
                     {
-                        dataBase.DeletePlayer();
+                        database.DeletePlayer();
                     }
-                    else if (userInput == ShowInfoPlayer)
+                    else if (userInput == showInfoPlayer)
                     {
-                        dataBase.ShowAllInfoPlayer();
+                        database.ShowAllInfoPlayer();
                     }
-                    else if (userInput == Exit)
+                    else if (userInput == exit)
                     {
                         Console.WriteLine("\nВы вели команду выхода из программы!");
                         isWorking = false;
@@ -66,17 +66,17 @@
     {
         private static int _number;
 
-        public Player(string nickName, int levelPlayer)
+        public Player(string nickName, int level)
         {
             NickName = nickName;
-            Level = levelPlayer;
-            isBan = false;
+            Level = level;
+            isBanned = false;
             CreateNumber();
         }
 
         public string NickName { get; private set; }
         public int Level { get; private set; }
-        public bool isBan { get; private set; }
+        public bool isBanned { get; private set; }
         public int UniqueNumber { get; private set; }
 
         public void CreateNumber()
@@ -86,19 +86,19 @@
 
         public void Ban()
         {
-            isBan = true;
+            isBanned = true;
             Console.WriteLine("Пользователь забанен!");
         }
 
         public void Unban()
         {
-            isBan = false;
+            isBanned = false;
             Console.WriteLine("Пользователь разбанен!");
         }
 
         public void ShowInfo()
         {
-            if (isBan)
+            if (isBanned)
             {
                 Console.WriteLine("\nПользователь забанен!");
             }
@@ -113,18 +113,17 @@
 
     class Database
     {
-        private Random random = new Random();
+        private Random _random = new Random();
         private List<Player> _players = new List<Player>();
 
         public void AddPlayer()
         {
             Console.Write("Введите ваш ник:");
             string nickPlayer = Console.ReadLine();
-            bool isnickPlayer = int.TryParse(nickPlayer, out int number);
             int minValue = 1;
             int maxValue = 11;
 
-            int levelPlayer = random.Next(minValue, maxValue);
+            int levelPlayer = _random.Next(minValue, maxValue);
 
             _players.Add(new Player(nickPlayer, levelPlayer));
         }
