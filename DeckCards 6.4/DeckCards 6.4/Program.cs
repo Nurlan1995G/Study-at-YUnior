@@ -7,23 +7,24 @@ namespace DeckCards
         static void Main(string[] args)
         {
             Player player = new Player();
-            string addCards = "1";
-            string showAllInfoCards = "2";
+
+            string menuAddCards = "1";
+            string menuShowAllInfoCards = "2";
             string exit = "3";
             bool isWorking = true;
 
             while (isWorking)
             {
                 Console.WriteLine("Главное меню.");
-                Console.WriteLine("\n1 - взять карту;\n2 - посмотреть всю информацию о картах;\n3 - выход из программы");
+                Console.WriteLine($"\n{menuAddCards} - взять карту;\n{menuShowAllInfoCards} - посмотреть всю информацию о картах;\n{exit} - выход из программы");
 
                 string userInput = Console.ReadLine();
 
-                if(userInput == addCards)
+                if(userInput == menuAddCards)
                 {
                     player.TakeCardFromDeck();
                 }
-                else if(userInput == showAllInfoCards)
+                else if(userInput == menuShowAllInfoCards)
                 {
                     player.ShowAllCardsInfo();
                 }
@@ -45,19 +46,19 @@ namespace DeckCards
 
     class Card
     {
-        public string Suit { get; private set; }
-        public int Number { get; private set; }
-
         public Card(string suit, int number)
         {
             Suit = suit;
             Number = number;
         }
+
+        public string Suit { get; private set; }
+        public int Number { get; private set; }
     }
 
     class Deck
     {
-        Random random = new Random();
+        private Random _random = new Random();
         private List<Card> _cards = new List<Card>();
 
         public Deck()
@@ -65,15 +66,15 @@ namespace DeckCards
             TakeCard();
         }
 
-        public void TakeCard()
+        private void TakeCard()
         {
             int minValue = 1;
             int maxValue = 10;
 
-            _cards.Add(new Card("Черви", random.Next(minValue, maxValue)));
-            _cards.Add(new Card("Бубна", random.Next(minValue, maxValue)));
-            _cards.Add(new Card("Крести", random.Next(minValue, maxValue)));
-            _cards.Add(new Card("Пика", random.Next(minValue, maxValue)));
+            _cards.Add(new Card("Черви", _random.Next(minValue, maxValue)));
+            _cards.Add(new Card("Бубна", _random.Next(minValue, maxValue)));
+            _cards.Add(new Card("Крести", _random.Next(minValue, maxValue)));
+            _cards.Add(new Card("Пика", _random.Next(minValue, maxValue)));
         }
 
         public bool TryTakeCard(out Card card)
@@ -95,12 +96,11 @@ namespace DeckCards
         {
             int cardNumber = 0;
             int minSuitNumber = 1;
-            int maxSuitNumber = 4;
+            int maxSuitNumber = 6;
 
             if(_cards.Count >= maxSuitNumber)
             {
-                cardNumber = random.Next(minSuitNumber, maxSuitNumber);
-                maxSuitNumber--;
+                cardNumber = _random.Next(minSuitNumber, maxSuitNumber);
             }
 
             return cardNumber;
@@ -109,14 +109,14 @@ namespace DeckCards
 
     class Player
     {
-        private List<Card> _cardsPlayer = new List<Card>();
+        private List<Card> _cardsParticipant = new List<Card>();
         private Deck _deck = new Deck();
 
         public void TakeCardFromDeck()
         {
-            if(_deck.TryTakeCard(out Card card))
+            if (_deck.TryTakeCard(out Card card))
             {
-                _cardsPlayer.Add(card);
+                _cardsParticipant.Add(card);
             }
             else
             {
@@ -128,19 +128,13 @@ namespace DeckCards
         {
             int scoreCard = 0;
 
-            if (_cardsPlayer.Count > 0)
-            {
-                for (int i = 0; i < _cardsPlayer.Count; i++)
-                {
-                    Console.WriteLine($"{_cardsPlayer[i].Suit} : {_cardsPlayer[i].Number} очков");
-                    scoreCard += _cardsPlayer[i].Number;
-                }
-            }
-            else
-            {
-                Console.WriteLine("Карт в колоде нет!");
-                Console.WriteLine($"{scoreCard} очков");
-            }
+             for (int i = 0; i < _cardsParticipant.Count; i++)
+             {
+                 Console.WriteLine($"{_cardsParticipant[i].Suit} : {_cardsParticipant[i].Number} очков");
+                 scoreCard += _cardsParticipant[i].Number;
+             }
+
+             Console.WriteLine($"\n{scoreCard} очков");
         }
     }
 }
