@@ -139,7 +139,6 @@ namespace Program
         public bool TryGetProduct(out Product product)
         {
             product = null;
-            bool isFound = false;
 
             Console.Write("Введите номер команды из меню: ");
             bool isNumber = int.TryParse(Console.ReadLine(), out int numberToFind);
@@ -157,7 +156,6 @@ namespace Program
                         if(numberToFind == produc.Number)
                         {
                             product = produc;
-                            isFound = true;
                             return true;
                         }
                     }
