@@ -69,8 +69,8 @@ namespace Program
                     _player.BuyProduct(product);
                     _seller.Sell(product);
 
-                    Console.WriteLine("Покупка пройдена успешно!");
-                    Console.WriteLine($"Баланс у покупателя - {_player.Money}");
+                    Console.WriteLine($"\nПокупка проведена успешно! Куплено - {product.Title}");
+                    Console.WriteLine($"\nОстаток баланса у покупателя - {_player.Money}");
                     Console.WriteLine($"Касса у продавца - {_seller.Money}");
                 }
                 else
@@ -89,18 +89,18 @@ namespace Program
 
     class Player : Person
     {
-        int sumMoney = 50;
+        private int _sumMoney = 50;
 
         public Player()
         {
-            Money = sumMoney;
+            Money = _sumMoney;
         }
 
         public void ShowInventory()
         {
             if (Products.Count != 0)
             {
-                foreach (var product in Products)
+                foreach (Product product in Products)
                 {
                     Console.WriteLine($"В сумке: {product.Title}");
                 }
@@ -122,17 +122,17 @@ namespace Program
     {
         public Seller()
         {
-            AddProduct();
+            AddProducts();
             Money = 0;
         }
 
         public void ShowInfoProducts()
         {
-            Console.WriteLine("Добро пожаловать в мой магазин! Вот мой список продуктов.");
+            Console.WriteLine("\nДобро пожаловать в мой магазин! Вот мой список продуктов.\n");
 
-            for (int i = 0; i < Products.Count; i++)
+            foreach (Product product in Products)
             {
-                Console.WriteLine($"{Products[i].Number}  {Products[i].Title} - {Products[i].Price} рублей");
+                Console.WriteLine($"{product.Number} {product.Title} - {product.Price}");
             }
         }
 
@@ -152,21 +152,18 @@ namespace Program
                 }
                 else
                 {
-                    for (int i = 0; i < Products.Count; i++)
+                    foreach (Product produc in Products)
                     {
-                        if (numberToFind == Products[i].Number)
+                        if(numberToFind == produc.Number)
                         {
-                            product = Products[i];
+                            product = produc;
                             isFound = true;
                             return true;
                         }
                     }
-                }
 
-                 if (isFound == false)
-                 {
-                     Console.WriteLine("Такого продукта нет");
-                 }
+                    Console.WriteLine("Такого продукта нет!");
+                }
             }
             else
             {
@@ -182,7 +179,7 @@ namespace Program
             Products.Remove(product);
         }
 
-        private void AddProduct()
+        private void AddProducts()
         {
             Products.Add(new Product(0, "Яблоки", 15));
             Products.Add(new Product(1, "Бананы", 17));
