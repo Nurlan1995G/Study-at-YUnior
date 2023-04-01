@@ -6,44 +6,44 @@
         { 
             Database database = new Database();
 
-            string addPlayer = "1";
-            string banPlayer = "2";
-            string unbanPlayer = "3";
-            string deletePlayer = "4";
-            string showInfoPlayer = "5";
-            string exit = "6";
+            string commandAddPlayer = "1";
+            string commandBanPlayer = "2";
+            string commandUnbanPlayer = "3";
+            string commandDeletePlayer = "4";
+            string commandShowInfoPlayer = "5";
+            string commandExit = "6";
             bool isWorking = true;
             
             while (isWorking) 
             {
                 Console.WriteLine($"Введите команду с меню!");
-                Console.WriteLine($"\n{addPlayer} - Добавление персонажа;\n{banPlayer} - Забанить персонажа;\n{unbanPlayer} - Разбанить персонажа;\n{deletePlayer} - Удалить персонажа;\n{showInfoPlayer} - Вывод информации о всех персонажах;\n{exit} - выход из программы.\n");
+                Console.WriteLine($"\n{commandAddPlayer} - Добавление персонажа;\n{commandBanPlayer} - Забанить персонажа;\n{commandUnbanPlayer} - Разбанить персонажа;\n{commandDeletePlayer} - Удалить персонажа;\n{commandShowInfoPlayer} - Вывод информации о всех персонажах;\n{commandExit} - выход из программы.\n");
                 string userInput = Console.ReadLine();
                 bool isNumber = int.TryParse(userInput, out int number);
 
                 if (isNumber)
                 {
-                    if (userInput == addPlayer)
+                    if (userInput == commandAddPlayer)
                     {
                         database.AddPlayer();
                     }
-                    else if (userInput == banPlayer)
+                    else if (userInput == commandBanPlayer)
                     {
                         database.BanPlayer();
                     }
-                    else if (userInput == unbanPlayer)
+                    else if (userInput == commandUnbanPlayer)
                     {
                         database.UnbanPlayer();
                     }
-                    else if (userInput == deletePlayer)
+                    else if (userInput == commandDeletePlayer)
                     {
                         database.DeletePlayer();
                     }
-                    else if (userInput == showInfoPlayer)
+                    else if (userInput == commandShowInfoPlayer)
                     {
                         database.ShowAllInfoPlayer();
                     }
-                    else if (userInput == exit)
+                    else if (userInput == commandExit)
                     {
                         Console.WriteLine("\nВы вели команду выхода из программы!");
                         isWorking = false;
@@ -65,40 +65,40 @@
     class Player
     {
         private static int _number;
+        private string _nickName;
+        private int _level;
+        private bool _isBanned;
 
         public Player(string nickName, int level)
         {
-            NickName = nickName;
-            Level = level;
-            isBanned = false;
+            _nickName = nickName;
+            _level = level;
+            _isBanned = false;
             CreateNumber();
         }
 
-        public string NickName { get; private set; }
-        public int Level { get; private set; }
-        public bool isBanned { get; private set; }
         public int UniqueNumber { get; private set; }
 
-        public void CreateNumber()
+        private void CreateNumber()
         {
             UniqueNumber = ++_number;
         }
 
         public void Ban()
         {
-            isBanned = true;
+            _isBanned = true;
             Console.WriteLine("Пользователь забанен!");
         }
 
         public void Unban()
         {
-            isBanned = false;
+            _isBanned = false;
             Console.WriteLine("Пользователь разбанен!");
         }
 
         public void ShowInfo()
         {
-            if (isBanned)
+            if (_isBanned)
             {
                 Console.WriteLine("\nПользователь забанен!");
             }
@@ -107,7 +107,7 @@
                 Console.WriteLine("\nНе забанен!");
             }
 
-            Console.WriteLine($"Уникальный номер - {UniqueNumber} | Ник - {NickName} | уровень - {Level}");
+            Console.WriteLine($"Уникальный номер - {UniqueNumber} | Ник - {_nickName} | уровень - {_level}");
         }
     }
 
@@ -180,7 +180,7 @@
             }
         }
 
-        public bool TryGetPlayer(out Player player)
+        private bool TryGetPlayer(out Player player)
         {
             player = null;
 
