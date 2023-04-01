@@ -9,24 +9,19 @@ namespace DeckCards
             Player player = new Player();
 
             string menuAddCards = "1";
-            string menuShowAllInfoCards = "2";
-            string exit = "3";
+            string exit = "2";
             bool isWorking = true;
 
             while (isWorking)
             {
                 Console.WriteLine("Главное меню.");
-                Console.WriteLine($"\n{menuAddCards} - взять карту;\n{menuShowAllInfoCards} - посмотреть всю информацию о картах;\n{exit} - выход из программы");
+                Console.WriteLine($"\n{menuAddCards} - взять карту;\n{exit} - выход из программы");
 
                 string userInput = Console.ReadLine();
 
                 if(userInput == menuAddCards)
                 {
                     player.TakeCardFromDeck();
-                }
-                else if(userInput == menuShowAllInfoCards)
-                {
-                    player.ShowAllCardsInfo();
                 }
                 else if(userInput == exit)
                 {
@@ -63,10 +58,10 @@ namespace DeckCards
 
         public Deck()
         {
-            TakeCard();
+            AddCard();
         }
 
-        private void TakeCard()
+        private void AddCard()
         {
             int minValue = 1;
             int maxValue = 10;
@@ -116,25 +111,27 @@ namespace DeckCards
         {
             if (_deck.TryTakeCard(out Card card))
             {
+                Console.WriteLine($"Карта успешно взята.\nВам выпала - {card.Suit}");
                 _cardsParticipant.Add(card);
             }
             else
             {
-                Console.WriteLine("Колода карт пуста!");
+                Console.WriteLine($"Партия закончилась!");
+                ShowAllCardsInfo();
             }
         }
 
-        public void ShowAllCardsInfo()
+        private void ShowAllCardsInfo()
         {
             int scoreCard = 0;
 
              for (int i = 0; i < _cardsParticipant.Count; i++)
              {
-                 Console.WriteLine($"{_cardsParticipant[i].Suit} : {_cardsParticipant[i].Number} очков");
-                 scoreCard += _cardsParticipant[i].Number;
+                Console.WriteLine($"{_cardsParticipant[i].Suit} - {_cardsParticipant[i].Number} очков");
+                scoreCard += _cardsParticipant[i].Number;
              }
 
-             Console.WriteLine($"\n{scoreCard} очков");
+             Console.WriteLine($"\nВсего очков: {scoreCard}");
         }
     }
 }
