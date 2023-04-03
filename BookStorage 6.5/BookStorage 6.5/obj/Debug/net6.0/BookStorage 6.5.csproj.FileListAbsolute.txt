@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\bin\Debug\net6.0\BookStorage 6.5.exe
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\bin\Debug\net6.0\BookStorage 6.5.deps.json
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\bin\Debug\net6.0\BookStorage 6.5.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\bin\Debug\net6.0\BookStorage 6.5.dll
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\bin\Debug\net6.0\BookStorage 6.5.pdb
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\obj\Debug\net6.0\BookStorage 6.5.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\obj\Debug\net6.0\BookStorage 6.5.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\obj\Debug\net6.0\BookStorage 6.5.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\obj\Debug\net6.0\BookStorage 6.5.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\obj\Debug\net6.0\BookStorage 6.5.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\obj\Debug\net6.0\BookStorage 6.5.dll
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\obj\Debug\net6.0\refint\BookStorage 6.5.dll
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\obj\Debug\net6.0\BookStorage 6.5.pdb
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\obj\Debug\net6.0\BookStorage 6.5.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\BookStorage 6.5\BookStorage 6.5\obj\Debug\net6.0\ref\BookStorage 6.5.dll
