@@ -19,7 +19,7 @@ namespace Program
             {
                 Console.WriteLine("\n$Хранилище книг$\n");
                 Console.WriteLine("Главное меню\n");
-                Console.WriteLine("1 - Добавить книгу;\n2 - Получить всю информацию по книгам;\n3 - Найти по автору;\n4 - Удалить книгу;\n5 - Выход из программы.\n");
+                Console.WriteLine($"{commandAddBook} - Добавить книгу;\n{commandShowInfo} - Получить всю информацию по книгам;\n{commandFindInfoAuthor} - Найти по автору;\n{commandDelete} - Удалить книгу;\n{commandExit} - Выход из программы.\n");
                 Console.Write("Введите команду: ");
 
                 string userInput = Console.ReadLine();
@@ -64,6 +64,11 @@ namespace Program
         public string Name { get; private set; }
         public string Author { get; private set; }
         public int YearRelease { get; private set; }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine($"Название книги - {Name} | Имя автора - {Author} | Год выпуска - {YearRelease}");
+        }
     }
 
     class BookStorage
@@ -72,24 +77,39 @@ namespace Program
 
         public BookStorage()
         {
-            GetBook();
+            GetBooks();
         }
 
         public void AddBook()
         {
-            Console.Write("Введите название книги: ");
-            string bookName = Console.ReadLine();
-            Console.Write("Введите автора: ");
-            string authorName = Console.ReadLine();
-            Console.Write("Введите год выпуска: ");
-            int yearRelease = Convert.ToInt32(Console.ReadLine());
+            bool isWorking = true;
 
-            _books.Add(new Book(bookName, authorName, yearRelease));
+            while (isWorking)
+            {
+                Console.Write("Введите название книги: ");
+                string bookName = Console.ReadLine();
+                Console.Write("Введите автора: ");
+                string authorName = Console.ReadLine();
+                Console.Write("Введите год выпуска: ");
+                string yearRelease = Console.ReadLine();
+
+                bool isNumber = int.TryParse(yearRelease, out int numberToFindYearRelease);
+
+                if (isNumber)
+                {
+                    _books.Add(new Book(bookName, authorName, numberToFindYearRelease));
+                    isWorking = false;
+                }
+                else
+                {
+                    Console.WriteLine("Вы вели некоректную команду. Попробуйте еще раз!");
+                }
+            }
         }
 
         public void DeleteBook()
         {
-            if(TryTakeBook(out Book book))
+            if(TryGetBook(out Book book))
             {
                 _books.Remove(book);
                 Console.WriteLine($"Книга с автором - {book.Author} удалена!");
@@ -102,13 +122,13 @@ namespace Program
 
         public void ShowInfoAuthor()
         {
-            if(TryTakeBook(out Book book))
+            if(TryGetBook(out Book book))
             {
                 for (int i = 0; i < _books.Count; i++)
                 {
                     if (book == _books[i])
                     {
-                        Console.WriteLine($"Название книги - {_books[i].Name} | Имя автора - {_books[i].Author} | Год выпуска - {_books[i].YearRelease}");
+                        _books[i].ShowInfo();
                     }
                 }
             }
@@ -128,7 +148,8 @@ namespace Program
                 Console.WriteLine("У вас пока нет ничего!");
             }
         }
-        private bool TryTakeBook(out Book book)
+
+        private bool TryGetBook(out Book book)
         {
             book = null;
             bool isFound = false;
@@ -145,12 +166,12 @@ namespace Program
                 }
             }
 
-            Console.WriteLine("Введенное вами имя автора не существует. Попробуйте еще раз");
+            Console.WriteLine("Введенное вами имя автора не существует, либо вели ошибку в написаном. Попробуйте еще раз");
 
             return false;
         }
 
-        private void GetBook()
+        private void GetBooks()
         {
             _books.Add(new Book("Загадка Эндхауза", "Агата Кристи", 1932));
             _books.Add(new Book("Всадник без головы", "Майн Рид", 1865));
