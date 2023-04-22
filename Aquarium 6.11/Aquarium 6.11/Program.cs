@@ -4,8 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace Task
 {
-    class Program  //Есть аквариум, в котором плавают рыбы.В этом аквариуме может быть максимум определенное кол-во рыб.Рыб можно добавить в аквариум или рыб можно достать из аквариума. (программу делать в цикле для того, чтобы рыбы могли “жить”.
-                   //Все рыбы отображаются списком, у рыб также есть возраст.За 1 итерацию рыбы стареют на определенное кол-во жизней и могут умереть.Рыб также вывести в консоль, чтобы можно было мониторить показатели.
+    class Program  
     {
         static void Main(string[] args)
         {
@@ -140,54 +139,54 @@ namespace Task
 
         private string GetName()
         {
-            string name = null;
+            string nameFish = null;
             bool isWorking = true;
 
             while (isWorking)
             {
                 Console.Write("Введите имя рыбки: ");
-                name = Console.ReadLine();
+                nameFish = Console.ReadLine();
 
-                if (name == null)
+                if (nameFish == null)
                 {
                     Console.WriteLine("Вы не вели имя рыбки. Попробуйте еще раз");
                 }
                 else
                 {
-                    return name;
+                    return nameFish;
                     isWorking = false;
                 }
             }
 
-            return name;
+            return nameFish;
         }
 
         private int GetAge()
         {
-            int numberAge = 0;
+            int numberAgeFish = 0;
             bool isWorking = true;
 
             while (isWorking)
             {
                 Console.Write("Введите возраст рыбки: ");
-                bool isNumber = int.TryParse(Console.ReadLine(), out numberAge);
+                bool isNumber = int.TryParse(Console.ReadLine(), out numberAgeFish);
 
                 if (isNumber == false)
                 {
                     Console.WriteLine("Вы вели некоректно");
                 }
-                else if (numberAge == 0)
+                else if (numberAgeFish == 0)
                 {
                     Console.WriteLine("Такой возраст недопустим");
                 }
                 else
                 {
-                    return numberAge;
+                    return numberAgeFish;
                     isWorking = false;
                 }
             }
 
-            return numberAge;
+            return numberAgeFish;
         }
     }
 
