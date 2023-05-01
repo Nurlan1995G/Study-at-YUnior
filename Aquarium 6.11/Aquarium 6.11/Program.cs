@@ -75,8 +75,9 @@ namespace Task
 
         public void RemoveFish()
         {
-            if (TryGetFish(out Fish fish))
+            if(TryGetFish(out Fish fish))
             {
+                Console.WriteLine("Рыбка успешно убрана!");
                 _fishes.Remove(fish);
             }
         }
@@ -98,8 +99,8 @@ namespace Task
             {
                 if (_fishes[i].IsAlive == false)
                 {
-                    _fishes.Remove(_fishes[i]);
-                    Console.WriteLine($"Рыба скончалась от возраста");
+                    Console.WriteLine($"Рыбка {_fishes[i].Name} скончалась от возраста");
+                    _fishes.RemoveAt(i);
                 }
             }
         }
@@ -114,27 +115,26 @@ namespace Task
 
         private bool TryGetFish(out Fish fish)
         {
+            fish = null;
+
             Console.Write("Введите номер рыбки: ");
             bool isNumber = int.TryParse(Console.ReadLine(), out int numberToFish);
 
             if(isNumber == false)
             {
                 Console.WriteLine("Вы вели некоректные данные");
-                fish = null;
-                return false;
             }
             else if(numberToFish > 0 && numberToFish - 1 < _fishes.Count)
             {
-                Console.WriteLine("Рыба успешно убрана");
                 fish = _fishes[numberToFish - 1];
                 return true;
             }
             else
             {
                 Console.WriteLine("Рыбы с таким номер нет");
-                fish = null;
-                return false;
             }
+
+            return false;
         }
 
         private string GetName()
@@ -175,7 +175,7 @@ namespace Task
                 {
                     Console.WriteLine("Вы вели некоректно");
                 }
-                else if (numberAgeFish == 0)
+                else if (numberAgeFish < 0)
                 {
                     Console.WriteLine("Такой возраст недопустим");
                 }
@@ -202,18 +202,8 @@ namespace Task
 
         public string Name { get; private set; }
         public int Age { get; private set; }
-        public bool IsAlive
-        {
-            get
-            {
-                return Age < _leathalAge;
-            }
-            private set { }
-        }
+        public bool IsAlive => Age < _leathalAge;
 
-        public void Live()
-        {
-            Age++;
-        }
+        public void Live() => Age++;
     }
 }
