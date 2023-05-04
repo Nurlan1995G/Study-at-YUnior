@@ -2,7 +2,7 @@
 
 namespace TaskShuffle
 {
-    class Program  //Реализуйте функцию Shuffle, которая перемешивает элементы массива в случайном порядке.
+    class Program  
     {
         static void Main(string[] args)
         {
