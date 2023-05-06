@@ -17,7 +17,7 @@ namespace Task
 
             while (isWorking)
             {
-                aquarium.ShowAquarium();
+                aquarium.ShowFishes();
                 Console.WriteLine($"\n---- Аквариум ----\n{commandAddFish} - Добавить рыбу;\n{commandRemoveFishFromAquarium} - Убрать рыбу из аквариума;" +
                     $"\n{commandExit} - Выход");
                 string userInput = Console.ReadLine();
@@ -82,7 +82,7 @@ namespace Task
             }
         }
 
-        public void ShowAquarium()
+        public void ShowFishes()
         {
             int numberFish = 1;
             Console.WriteLine($"\nРыб в аквариуме - {_fishes.Count}");
@@ -95,12 +95,15 @@ namespace Task
 
         public void RemoveDeadFish()
         {
+            bool isWoking = true;
+
             for (int i = 0; i < _fishes.Count; i++)
             {
                 if (_fishes[i].IsAlive == false)
                 {
                     Console.WriteLine($"Рыбка {_fishes[i].Name} скончалась от возраста");
                     _fishes.RemoveAt(i);
+                    break;
                 }
             }
         }
@@ -124,7 +127,7 @@ namespace Task
             {
                 Console.WriteLine("Вы вели некоректные данные");
             }
-            else if(numberToFish > 0 && numberToFish - 1 < _fishes.Count)
+            else if(numberToFish > 0 && numberToFish - 1 < _fishes.Count && fish.IsAlive == true)
             {
                 fish = _fishes[numberToFish - 1];
                 return true;
@@ -165,6 +168,7 @@ namespace Task
         {
             int numberAgeFish = 0;
             bool isWorking = true;
+            Fish fish = null;
 
             while (isWorking)
             {
@@ -175,7 +179,7 @@ namespace Task
                 {
                     Console.WriteLine("Вы вели некоректно");
                 }
-                else if (numberAgeFish < 0)
+                else if (numberAgeFish < 0 && numberAgeFish > fish.LeathalAge)
                 {
                     Console.WriteLine("Такой возраст недопустим");
                 }
@@ -200,6 +204,7 @@ namespace Task
             Age = age;
         }
 
+        public int LeathalAge { get { return _leathalAge; } }
         public string Name { get; private set; }
         public int Age { get; private set; }
         public bool IsAlive => Age < _leathalAge;
