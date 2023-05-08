@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\bin\Debug\net6.0\SearchCriminal 7.1.exe
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\bin\Debug\net6.0\SearchCriminal 7.1.deps.json
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\bin\Debug\net6.0\SearchCriminal 7.1.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\bin\Debug\net6.0\SearchCriminal 7.1.dll
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\bin\Debug\net6.0\SearchCriminal 7.1.pdb
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\obj\Debug\net6.0\SearchCriminal 7.1.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\obj\Debug\net6.0\SearchCriminal 7.1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\obj\Debug\net6.0\SearchCriminal 7.1.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\obj\Debug\net6.0\SearchCriminal 7.1.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\obj\Debug\net6.0\SearchCriminal 7.1.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\obj\Debug\net6.0\SearchCriminal 7.1.dll
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\obj\Debug\net6.0\refint\SearchCriminal 7.1.dll
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\obj\Debug\net6.0\SearchCriminal 7.1.pdb
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\obj\Debug\net6.0\SearchCriminal 7.1.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\SearchCriminal 7.1\SearchCriminal 7.1\obj\Debug\net6.0\ref\SearchCriminal 7.1.dll
