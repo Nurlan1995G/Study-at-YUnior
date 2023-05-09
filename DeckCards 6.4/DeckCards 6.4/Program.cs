@@ -10,14 +10,15 @@ namespace DeckCards
             Deck deck = new Deck();
 
             string menuAddCards = "1";
-            string exit = "2";
-            string menuShowInfo = "3";
+            string menuShowInfo = "2";
+            string exit = "3";
             bool isWorking = true;
 
             while (isWorking)
             {
                 Console.WriteLine("Главное меню.");
-                Console.WriteLine($"\n{menuAddCards} - взять карту;\n{exit} - выход из программы");
+                Console.WriteLine($"\n{menuAddCards} - взять карту;\n{menuShowInfo} - Показать информацию о картах;" +
+                    $"\n{exit} - выход из программы");
 
                 string userInput = Console.ReadLine();
 
@@ -25,14 +26,14 @@ namespace DeckCards
                 {
                     player.TakeCardFromDeck(deck);
                 }
-                else if(userInput == exit)
-                {
-                    Console.WriteLine("Вы вели команду завершения программы!");
-                    isWorking = false;
-                }
                 else if(userInput == menuShowInfo)
                 {
                     player.ShowInfoCards();
+                }
+                else if (userInput == exit)
+                {
+                    Console.WriteLine("Вы вели команду завершения программы!");
+                    isWorking = false;
                 }
                 else
                 {
@@ -49,16 +50,16 @@ namespace DeckCards
     {
         public Card(string suit, int number)
         {
-            Suit = suit;
-            Number = number;
+            Name = suit;
+            Point = number;
         }
 
-        public string Suit { get; private set; }
-        public int Number { get; private set; }
+        public string Name { get; private set; }
+        public int Point { get;  set; }
 
         public void ShowInfo()
         {
-            Console.WriteLine($"{Suit} - {Number} очков");
+            Console.WriteLine($"{Name} - {Point} очков");
         }
     }
 
@@ -69,25 +70,14 @@ namespace DeckCards
 
         public Deck()
         {
-            CreateCard();
+            CreateCards();
         }
 
-        private void CreateCard()
+        public bool TryGetCard(out Card card)
         {
-            int minValue = 1;
-            int maxValue = 10;
-
-            _cards.Add(new Card("Черви", _random.Next(minValue, maxValue)));
-            _cards.Add(new Card("Бубна", _random.Next(minValue, maxValue)));
-            _cards.Add(new Card("Крести", _random.Next(minValue, maxValue)));
-            _cards.Add(new Card("Пика", _random.Next(minValue, maxValue)));
-        }
-
-        public bool TryTakeCard(out Card card)
-        {
-            if(_cards.Count > 0)
+            if (_cards.Count > 0)
             {
-                card = _cards[0];
+                card = _cards[GetNumberCard()];
                 _cards.Remove(card);
                 return true;
             }
@@ -97,6 +87,43 @@ namespace DeckCards
                 return false;
             }
         }
+
+        private void CreateCards()
+        {
+            _cards.Add(new Card("Шестёрка", GetPoints()));
+            _cards.Add(new Card("Семёрка", GetPoints()));
+            _cards.Add(new Card("Восьмёрка", GetPoints()));
+            _cards.Add(new Card("Девятка", GetPoints()));
+            _cards.Add(new Card("Десятка", GetPoints()));
+            _cards.Add(new Card("Валет", GetPoints()));
+            _cards.Add(new Card("Дама", GetPoints()));
+            _cards.Add(new Card("Король", GetPoints()));
+            _cards.Add(new Card("Туз", GetPoints()));
+        }
+
+        private int GetNumberCard()
+        {
+            int randomIndex = 0;
+
+            if(_cards.Count > 0)
+            {
+                randomIndex = _random.Next(0, _cards.Count);
+            }
+
+            return randomIndex;
+        }
+
+        private int GetPoints()
+        {
+            int number = 6;
+
+            for (int i = 0; i < _cards.Count; i++)
+            {
+                number++;   
+            }
+
+            return number;
+        }
     }
 
     class Player
@@ -105,10 +132,15 @@ namespace DeckCards
 
         public void TakeCardFromDeck(Deck deck)
         {
-            if (deck.TryTakeCard(out Card card))
+            int maxCountCart = 4;
+
+            if (deck.TryGetCard(out Card card) && _cardsParticipant.Count + 1 <= maxCountCart)
             {
-                Console.WriteLine($"Карта успешно взята.\nВам выпала - {card.Suit}");
-                _cardsParticipant.Add(card);
+                if (card != null)
+                {
+                    Console.WriteLine($"Карта успешно взята.\nВам выпала - {card.Name}");
+                    _cardsParticipant.Add(card);
+                }
             }
             else
             {
@@ -119,9 +151,16 @@ namespace DeckCards
 
         public void ShowInfoCards()
         {
-            foreach (var card in _cardsParticipant)
+            if (_cardsParticipant.Count > 0)
             {
-                card.ShowInfo();
+                foreach (var card in _cardsParticipant)
+                {
+                    card.ShowInfo();
+                }
+            }
+            else
+            {
+                Console.WriteLine("У вас пока нет карт");
             }
         }
 
@@ -132,7 +171,7 @@ namespace DeckCards
              for (int i = 0; i < _cardsParticipant.Count; i++)
              {
                 _cardsParticipant[i].ShowInfo();
-                scoreCard += _cardsParticipant[i].Number;
+                scoreCard += _cardsParticipant[i].Point;
              }
 
              Console.WriteLine($"\nВсего очков: {scoreCard}");
