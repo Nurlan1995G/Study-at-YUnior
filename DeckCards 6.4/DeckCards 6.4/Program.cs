@@ -55,7 +55,7 @@ namespace DeckCards
         }
 
         public string Suit { get; private set; }
-        public int Point { get;  set; }
+        public int Point { get; private set; }
 
         public void ShowInfo()
         {
