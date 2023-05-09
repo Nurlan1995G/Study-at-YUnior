@@ -50,16 +50,16 @@ namespace DeckCards
     {
         public Card(string suit, int number)
         {
-            Name = suit;
+            Suit = suit;
             Point = number;
         }
 
-        public string Name { get; private set; }
+        public string Suit { get; private set; }
         public int Point { get;  set; }
 
         public void ShowInfo()
         {
-            Console.WriteLine($"{Name} - {Point} очков");
+            Console.WriteLine($"{Suit} - {Point} очков");
         }
     }
 
@@ -138,7 +138,7 @@ namespace DeckCards
             {
                 if (card != null)
                 {
-                    Console.WriteLine($"Карта успешно взята.\nВам выпала - {card.Name}");
+                    Console.WriteLine($"Карта успешно взята.\nВам выпала - {card.Suit}");
                     _cardsParticipant.Add(card);
                 }
             }
