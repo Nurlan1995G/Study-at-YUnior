@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\bin\Debug\net6.0\PassegerTrainConfigurator 6.7.exe
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\bin\Debug\net6.0\PassegerTrainConfigurator 6.7.deps.json
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\bin\Debug\net6.0\PassegerTrainConfigurator 6.7.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\bin\Debug\net6.0\PassegerTrainConfigurator 6.7.dll
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\bin\Debug\net6.0\PassegerTrainConfigurator 6.7.pdb
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\obj\Debug\net6.0\PassegerTrainConfigurator 6.7.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\obj\Debug\net6.0\PassegerTrainConfigurator 6.7.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\obj\Debug\net6.0\PassegerTrainConfigurator 6.7.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\obj\Debug\net6.0\PassegerTrainConfigurator 6.7.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\obj\Debug\net6.0\PassegerTrainConfigurator 6.7.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\obj\Debug\net6.0\PassegerTrainConfigurator 6.7.dll
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\obj\Debug\net6.0\refint\PassegerTrainConfigurator 6.7.dll
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\obj\Debug\net6.0\PassegerTrainConfigurator 6.7.pdb
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\obj\Debug\net6.0\PassegerTrainConfigurator 6.7.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\PassegerTrainConfigurator 6.7\PassegerTrainConfigurator 6.7\obj\Debug\net6.0\ref\PassegerTrainConfigurator 6.7.dll
