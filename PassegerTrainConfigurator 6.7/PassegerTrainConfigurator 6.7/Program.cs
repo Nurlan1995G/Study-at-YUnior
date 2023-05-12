@@ -57,70 +57,35 @@ namespace PassengerTrainConfiguration
     {
         private Wagon _wagon = new Wagon();
 
+        public int CountWagon { get; private set; }
+
         public void CreateTrain()
         {
-            _wagon.CreateCountOfWagon();
+            CreateCountOfWagon();
             _wagon.NumberPlaceOfWagon();
         }
 
         public void ShowTrain()
         {
-            Console.WriteLine($"Поезд создан. Кол-во вагонов - {_wagon.CountWagon}, кол-во мест в вагоне - {_wagon.Place}");
-            Console.WriteLine($"Всего мест {_wagon.CountWagon * _wagon.Place}");
+            Console.WriteLine($"Поезд создан. Кол-во вагонов - {CountWagon}, кол-во мест в вагоне - {_wagon.Places}");
+            Console.WriteLine($"Всего мест {CountWagon * _wagon.Places}");
         }
 
         public bool TryBuildTrain(int passagerCount)  
         {
-            if(_wagon.CountWagon * _wagon.Place > passagerCount)
+            if(CountWagon * _wagon.Places > passagerCount)
             {
-                Console.WriteLine($"Поезд успешно создан и укомплетован.\nВ вагоне свободных {_wagon.CountWagon * _wagon.Place - passagerCount} мест");
+                Console.WriteLine($"Поезд успешно создан и укомплетован.\nВ вагоне свободных {CountWagon * _wagon.Places - passagerCount} мест");
                 return true;
             }
             else
             {
-                Console.WriteLine($"В поезде не хватило {passagerCount - _wagon.Place * _wagon.CountWagon} мест пассажирам");
+                Console.WriteLine($"В поезде не хватило {passagerCount - _wagon.Places * CountWagon} мест пассажирам");
                 return false;
             }
         }
-    }
 
-    class Wagon
-    {
-        public int Place { get; private set; }
-        public int CountWagon { get; private set; }
-
-        public void NumberPlaceOfWagon()   
-        {
-            bool isWorking = true;
-            int maxNumberPlaceOfWagon = 100;
-            int minNumberPlaceOfWagon = 1;
-
-            while (isWorking)
-            {
-                Console.Write($"Введите кол-во мест в вагоне: ");
-                bool isNumber = int.TryParse(Console.ReadLine(), out int numberSeatsOfWagon);
-
-                if (isNumber)
-                {
-                    if (numberSeatsOfWagon > maxNumberPlaceOfWagon || numberSeatsOfWagon < minNumberPlaceOfWagon)
-                    {
-                        Console.WriteLine("Ошибка. Мест в одном вагоне не достаточно.");
-                    }
-                    else
-                    {
-                        Place = numberSeatsOfWagon;
-                        Console.WriteLine($"В вагоне {Place} мест");
-                        isWorking = false;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Ошибка! Попробуйте вести другую команду.");
-                }
-            }
-        }
-
-        public void CreateCountOfWagon()  
+        private void CreateCountOfWagon()
         {
             bool isWorking = true;
             int maxCountOfWagon = 15;
@@ -152,6 +117,43 @@ namespace PassengerTrainConfiguration
         }
     }
 
+    class Wagon
+    {
+        public int Places { get; private set; }
+        public int CountWagon { get; private set; }
+
+        public void NumberPlaceOfWagon()   
+        {
+            bool isWorking = true;
+            int maxNumberPlaceOfWagon = 100;
+            int minNumberPlaceOfWagon = 1;
+
+            while (isWorking)
+            {
+                Console.Write($"Введите кол-во мест в вагоне: ");
+                bool isNumber = int.TryParse(Console.ReadLine(), out int numberSeatsOfWagon);
+
+                if (isNumber)
+                {
+                    if (numberSeatsOfWagon > maxNumberPlaceOfWagon || numberSeatsOfWagon < minNumberPlaceOfWagon)
+                    {
+                        Console.WriteLine("Ошибка. Мест в одном вагоне не достаточно.");
+                    }
+                    else
+                    {
+                        Places = numberSeatsOfWagon;
+                        Console.WriteLine($"В вагоне {Places} мест");
+                        isWorking = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Ошибка! Попробуйте вести другую команду.");
+                }
+            }
+        }
+    }
+
     class Direction
     {
         public Direction(string departurePoint, string arrivePoint)
@@ -168,21 +170,20 @@ namespace PassengerTrainConfiguration
     {
         private Random _random = new Random();
         private List<Direction> _directions = new List<Direction>();
-        private Wagon _wagon = new Wagon();
         private Train _train = new Train();
 
         public int SoldTickets { get; private set; } 
 
         public void CreateDirection()
         {
-            int numberDirection = 1;
+            int countDirections = 1;
 
             Console.Write("Введите город, откуда вы собираетесь отправится: ");
             string departurePoint = Console.ReadLine();
             Console.Write("Введите конечную точку: ");
             string arrivePoint = Console.ReadLine();
 
-            if(departurePoint.ToLower() == arrivePoint.ToLower() || _directions.Count >= numberDirection)
+            if(departurePoint.ToLower() == arrivePoint.ToLower() || _directions.Count >= countDirections)
             {
                 Console.WriteLine("Ошибка! Вы вели один и тот же город или направление уже создано.");
             }
@@ -223,7 +224,10 @@ namespace PassengerTrainConfiguration
 
         public void CreateTrain()
         {
-            if (TakeTrain()) { }
+            if (TakeTrain() == false) 
+            {
+                return;
+            }
             else
             {
                 _train.CreateTrain();
@@ -235,7 +239,10 @@ namespace PassengerTrainConfiguration
         {
             if (_train.TryBuildTrain(SoldTickets))
             {
-                if (TakeTrain()) { }
+                if (TakeTrain() == false) 
+                {
+                    return;
+                }
                 else
                 {
                     ShowInfo();
