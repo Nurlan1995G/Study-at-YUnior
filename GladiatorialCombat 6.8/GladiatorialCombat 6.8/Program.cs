@@ -22,11 +22,7 @@ namespace TaskCombat
 
         public Fighter()
         {
-            _warriors.Add(new Orc("Азог Завоеватель", 300, 50, 10));
-            _warriors.Add(new Knight("Лонселот", 200, 50, 20));
-            _warriors.Add(new Wizard("Кадгар", 180, 40, 5, 10, 15));
-            _warriors.Add(new Dwarf("Гимли", 100, 70, 15, 50));
-            _warriors.Add(new Elf("Леголас", 80, 65, 10, 10, 30));
+            AddWarrior();
         }
 
         public void Fight()
@@ -55,6 +51,15 @@ namespace TaskCombat
             }
 
             ResultFight();
+        }
+
+        private void AddWarrior()
+        {
+            _warriors.Add(new Orc("Азог Завоеватель", 300, 50, 10));
+            _warriors.Add(new Knight("Лонселот", 200, 50, 20));
+            _warriors.Add(new Wizard("Кадгар", 180, 40, 5, 10, 15));
+            _warriors.Add(new Dwarf("Гимли", 100, 70, 15, 50));
+            _warriors.Add(new Elf("Леголас", 80, 65, 10, 10, 30));
         }
 
         private Warrior SelectWarrior()
