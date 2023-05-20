@@ -2,13 +2,7 @@
 
 namespace SuperMarket
 {
-    class Program  //Написать программу администрирования супермаркетом.
-                   //В супермаркете есть очередь клиентов.
-                   //У каждого клиента в корзине есть товары, также у клиентов есть деньги.
-                   //Клиент, когда подходит на кассу, получает итоговую сумму покупки и старается её оплатить.
-                   //Если оплатить клиент не может, то он рандомный товар из корзины выкидывает до тех пор, пока его денег не хватит для оплаты.
-                   //Клиентов можно делать ограниченное число на старте программы.
-                   //Супермаркет содержит список товаров, из которых клиент выбирает товары для покупки.
+    class Program  
     {
         static void Main(string[] args)
         {
@@ -20,23 +14,13 @@ namespace SuperMarket
 
     class Shop
     {
-        Random random = new Random();
+        private Random _random = new Random();
         private Queue<Buyer> _buyers = new Queue<Buyer>();
         private List<Product> _products = new List<Product>();
         
         public Shop()
         {
-            _products.Add(new Product("Огурцы", GetPriceProducts()));
-            _products.Add(new Product("Молоко", GetPriceProducts()));
-            _products.Add(new Product("Помидоры", GetPriceProducts()));
-            _products.Add(new Product("Мясо", GetPriceProducts()));
-            _products.Add(new Product("Чипсы", GetPriceProducts()));
-            _products.Add(new Product("Сыр", GetPriceProducts()));
-            _products.Add(new Product("Колбаса", GetPriceProducts()));
-            _products.Add(new Product("Мука", GetPriceProducts()));
-            _products.Add(new Product("Макароны", GetPriceProducts()));
-            _products.Add(new Product("Печеньки", GetPriceProducts()));
-            _products.Add(new Product("Мороженное", GetPriceProducts()));
+            AddProducts();
         }
 
         public void Work()
@@ -74,11 +58,27 @@ namespace SuperMarket
             }
         }
 
+        private void AddProducts()
+        {
+            _products.Add(new Product("Огурцы", GetPriceProducts()));
+            _products.Add(new Product("Молоко", GetPriceProducts()));
+            _products.Add(new Product("Помидоры", GetPriceProducts()));
+            _products.Add(new Product("Мясо", GetPriceProducts()));
+            _products.Add(new Product("Чипсы", GetPriceProducts()));
+            _products.Add(new Product("Сыр", GetPriceProducts()));
+            _products.Add(new Product("Колбаса", GetPriceProducts()));
+            _products.Add(new Product("Мука", GetPriceProducts()));
+            _products.Add(new Product("Макароны", GetPriceProducts()));
+            _products.Add(new Product("Печеньки", GetPriceProducts()));
+            _products.Add(new Product("Мороженное", GetPriceProducts()));
+        }
+
         private void CreateCustomerQueue()
         {
             int minNumberQueue = 2;
             int maxNumberQueue = 10;
-            int countBuyer = random.Next(minNumberQueue, maxNumberQueue);
+
+            int countBuyer = _random.Next(minNumberQueue, maxNumberQueue);
 
             for (int i = 0; i < countBuyer; i++)
             {
@@ -90,13 +90,33 @@ namespace SuperMarket
             Console.WriteLine("Нажмите любую клавишу для продолжения...");
         }
 
+        private Buyer CreateBuyer()
+        {
+            List<Product> products = new List<Product>();
+
+            int minCountMoney = 200;
+            int maxCountMoney = 600;
+            int minCountProduct = 5;
+            int maxCountProduct = 15;
+
+            int countProducts = _random.Next(minCountProduct, maxCountProduct);
+            int countMoney = _random.Next(minCountMoney, maxCountMoney);
+
+            for (int i = 0; i < countProducts; i++)
+            {
+                products.Add(_products[_random.Next(0, _products.Count - 1)]);
+            }
+
+            return new Buyer(countMoney, products);
+        }
+
         private void ServerCustomerQueue()
         {
             if(_buyers.Count > 0)
             {
                 while(_buyers.Count > 0)
                 {
-                    _buyers.Dequeue().BuyProduct();
+                    _buyers.Dequeue().BuyProducts();
                 }
 
                 Console.WriteLine("Очередь обслужена!");
@@ -107,29 +127,11 @@ namespace SuperMarket
             }
         }
 
-        private Buyer CreateBuyer()
-        {
-            List<Product> products = new List<Product>();
-            int minCountMoney = 200;
-            int maxCountMoney = 600;
-            int minCountProduct = 5;
-            int maxCountProduct = 15;
-            int countProducts = random.Next(minCountProduct, maxCountProduct);
-            int countMoney = random.Next(minCountMoney, maxCountMoney);
-
-            for (int i = 0; i < countProducts; i++)
-            {
-                products.Add(_products[random.Next(0, _products.Count - 1)]);
-            }
-
-            return new Buyer(countMoney, products);
-        }
-
         private int GetPriceProducts()
         {
             int minValue = 10;
             int maxValue = 100;
-            int priceProduct = random.Next(minValue,maxValue);
+            int priceProduct = _random.Next(minValue,maxValue);
 
             return priceProduct;
         }
@@ -158,11 +160,11 @@ namespace SuperMarket
             _money = money;
         }
         
-        public void BuyProduct()
+        public void BuyProducts()
         {
             Console.Clear();
             Console.WriteLine("---- Корзина покупок ----\n");
-            ShowBasketProduct();
+            ShowBasketProducts();
             Console.WriteLine($"\nСтоимость всей корзины покупок - {GetPurchaseAmount()}, у клиента {_money} рублей\n");
 
             if(_money >= GetPurchaseAmount())
@@ -171,10 +173,10 @@ namespace SuperMarket
             }
             else
             {
-                RemoveUnwantedProduct();
+                RemoveUnwantedProducts();
                 Console.WriteLine($"\nКлиент приобрел продукты, на что хватило!\n");
                 Console.WriteLine("---- В пакете у покупателя ----\n");
-                ShowBasketProduct();
+                ShowBasketProducts();
             }
 
             Console.ReadKey();
@@ -193,29 +195,29 @@ namespace SuperMarket
             return purchaseAmount;
         }
 
-        private void RemoveProduct()
+        private void RemoveProducts()
         {
             Random random = new Random(); 
 
-            int index = random.Next(0, _products.Count);
-            Product product = _products[index];
+            int indexProduct = random.Next(0, _products.Count);
+            Product product = _products[indexProduct];
 
             Console.WriteLine($"Клиент выложил с корзины: {product.Title}, стоимость - {product.Price} рублей");
             _products.Remove(product);
         }
 
-        private void ShowBasketProduct()
+        private void RemoveUnwantedProducts()
+        {
+            while(GetPurchaseAmount() >= _money)
+                RemoveProducts();
+        }
+
+        private void ShowBasketProducts()
         {
             foreach (Product product in _products)
             {
                 Console.WriteLine($"{product.Title} - {product.Price}");
             }
-        }
-
-        private void RemoveUnwantedProduct()
-        {
-            while(GetPurchaseAmount() >= _money)
-                RemoveProduct();
         }
     }
 }
