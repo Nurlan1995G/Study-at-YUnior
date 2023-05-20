@@ -18,6 +18,16 @@ namespace TaskCombat
     {
         private Warrior _firstPlayer;
         private Warrior _secondPlayer;
+        private List<Warrior> _warriors = new List<Warrior>();
+
+        public Fighter()
+        {
+            _warriors.Add(new Orc("Азог Завоеватель", 300, 50, 10));
+            _warriors.Add(new Knight("Лонселот", 200, 50, 20));
+            _warriors.Add(new Wizard("Кадгар", 180, 40, 5, 10, 15));
+            _warriors.Add(new Dwarf("Гимли", 100, 70, 15, 50));
+            _warriors.Add(new Elf("Леголас", 80, 65, 10, 10, 30));
+        }
 
         public void Fight()
         {
@@ -29,7 +39,7 @@ namespace TaskCombat
 
             PressEnter(desiredKey);
 
-            while(_firstPlayer.Health > 0 && _secondPlayer.Health > 0)
+            while (_firstPlayer.Health > 0 && _secondPlayer.Health > 0)
             {
                 Console.Clear();
 
@@ -47,26 +57,17 @@ namespace TaskCombat
             ResultFight();
         }
 
-        private Warrior SelectWarrior()     
+        private Warrior SelectWarrior()
         {
-            List<Warrior> warriors = new List<Warrior> 
-            { 
-                new Orc("Азог Завоеватель",300,50,10),
-                new Knight("Лонселот",200,50, 20),
-                new Wizard("Кадгар",180,40,5,10,15), 
-                new Dwarf("Гимли", 100, 70, 15,50),
-                new Elf("Леголас",80,65,10,10,30)
-        };
-
             Warrior warrior = null;
 
             string userInput;
 
-            ShowFighters(warriors);
+            ShowFighters(_warriors);
 
-            while(warrior == null)
+            while (warrior == null)
             {
-                if(_firstPlayer == null)
+                if (_firstPlayer == null)
                 {
                     Console.Write("Введите номер первого бойца: ");
                     userInput = Console.ReadLine();
@@ -74,14 +75,15 @@ namespace TaskCombat
                 else
                 {
                     Console.Write("Введите номер второго бойца: ");
-                    userInput= Console.ReadLine();
+                    userInput = Console.ReadLine();
                 }
 
                 bool isNumber = int.TryParse(userInput, out int numberToFindWarrior);
 
-                if(isNumber && numberToFindWarrior <= warriors.Count && numberToFindWarrior > 0)
+                if (isNumber && numberToFindWarrior <= _warriors.Count && numberToFindWarrior > 0)
                 {
-                    warrior = warriors[numberToFindWarrior - 1];
+                    warrior = _warriors[numberToFindWarrior - 1];
+                    _warriors.Remove(warrior);
                 }
                 else
                 {
@@ -105,11 +107,11 @@ namespace TaskCombat
 
         private void ResultFight()
         {
-            if(_firstPlayer.Health > _secondPlayer.Health)
+            if (_firstPlayer.Health > _secondPlayer.Health)
             {
                 Console.WriteLine($"Победил первый игрок: {_firstPlayer.Name}");
             }
-            else if(_firstPlayer.Health < _secondPlayer.Health)
+            else if (_firstPlayer.Health < _secondPlayer.Health)
             {
                 Console.WriteLine($"Победил второй игрок: {_secondPlayer.Name}");
             }
@@ -119,11 +121,11 @@ namespace TaskCombat
             }
         }
 
-        private void PressEnter(ConsoleKey desiredKey)  
+        private void PressEnter(ConsoleKey desiredKey)
         {
             ConsoleKeyInfo key = Console.ReadKey(true);
 
-            if(key.Key != desiredKey)
+            if (key.Key != desiredKey)
             {
                 Console.WriteLine($"Для продолжение нажмите: {desiredKey}");
                 Console.ReadKey();
@@ -137,7 +139,7 @@ namespace TaskCombat
     {
         public Warrior(string name, int health, int damage, int armor)
         {
-            Name = name;    
+            Name = name;
             Health = health;
             Damage = damage;
             Armor = armor;
@@ -166,16 +168,16 @@ namespace TaskCombat
         }
     }
 
-    class Orc : Warrior  
+    class Orc : Warrior
     {
-        private int _multiplicityOfChances = 3;  
+        private int _multiplicityOfChances = 3;
         private int _attackCount = 1;
 
         public Orc(string name, int health, int damage, int armor) : base(name, health, damage, armor) { }
 
         public override void Attack(Warrior warrior)
         {
-            if(_attackCount % _multiplicityOfChances == 0)
+            if (_attackCount % _multiplicityOfChances == 0)
             {
                 warrior.TakeDamage(Damage);
                 warrior.TakeDamage(Damage);
@@ -196,7 +198,7 @@ namespace TaskCombat
         }
     }
 
-    class Knight : Warrior  
+    class Knight : Warrior
     {
         private int _multiplicityOfChances = 2;
         private int _takeDamageCount = 1;
@@ -205,7 +207,7 @@ namespace TaskCombat
 
         public override void TakeDamage(int damage)
         {
-            if(_takeDamageCount % _multiplicityOfChances == 0)
+            if (_takeDamageCount % _multiplicityOfChances == 0)
             {
                 Console.WriteLine($"{Name} - выставил щит");
             }
@@ -223,7 +225,7 @@ namespace TaskCombat
         }
     }
 
-    class Wizard : Warrior 
+    class Wizard : Warrior
     {
         private int _multiplicityOfChances = 3;
         private int _takeDamageCount = 1;
@@ -248,7 +250,7 @@ namespace TaskCombat
 
         public override void Attack(Warrior warrior)
         {
-            if(_takeDamageCount % _multiplicityOfChances == 0)
+            if (_takeDamageCount % _multiplicityOfChances == 0)
             {
                 warrior.TakeDamage(Damage + AttackMagicBall);
 
@@ -268,7 +270,7 @@ namespace TaskCombat
         }
     }
 
-    class Dwarf : Warrior  
+    class Dwarf : Warrior
     {
         private int _multiplicityOfChances = 3;
         private int _attackCount = 1;
@@ -282,7 +284,7 @@ namespace TaskCombat
 
         public override void Attack(Warrior warrior)
         {
-            if(_attackCount % _multiplicityOfChances == 0)
+            if (_attackCount % _multiplicityOfChances == 0)
             {
                 warrior.TakeDamage(Damage + HammerBlow);
 
