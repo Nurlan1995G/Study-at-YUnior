@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\bin\Debug\net6.0\War 6.10.exe
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\bin\Debug\net6.0\War 6.10.deps.json
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\bin\Debug\net6.0\War 6.10.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\bin\Debug\net6.0\War 6.10.dll
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\bin\Debug\net6.0\War 6.10.pdb
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\obj\Debug\net6.0\War 6.10.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\obj\Debug\net6.0\War 6.10.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\obj\Debug\net6.0\War 6.10.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\obj\Debug\net6.0\War 6.10.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\obj\Debug\net6.0\War 6.10.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\obj\Debug\net6.0\War 6.10.dll
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\obj\Debug\net6.0\refint\War 6.10.dll
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\obj\Debug\net6.0\War 6.10.pdb
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\obj\Debug\net6.0\War 6.10.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\War 6.10\War 6.10\obj\Debug\net6.0\ref\War 6.10.dll
