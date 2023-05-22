@@ -8,21 +8,21 @@ namespace TaskCombat
     {
         static void Main(string[] args)
         {
-            Fighter fighter = new Fighter();
+            FightArena fighter = new FightArena();
 
             fighter.Fight();
         }
     }
 
-    class Fighter
+    class FightArena
     {
         private Warrior _firstPlayer;
         private Warrior _secondPlayer;
         private List<Warrior> _warriors = new List<Warrior>();
 
-        public Fighter()
+        public FightArena()
         {
-            AddWarrior();
+            AddWarriors();
         }
 
         public void Fight()
@@ -32,8 +32,6 @@ namespace TaskCombat
             _firstPlayer = SelectWarrior();
             Console.Clear();
             _secondPlayer = SelectWarrior();
-
-            PressEnter(desiredKey);
 
             while (_firstPlayer.Health > 0 && _secondPlayer.Health > 0)
             {
@@ -47,19 +45,20 @@ namespace TaskCombat
                 _firstPlayer.ShowStats();
                 _secondPlayer.ShowStats();
 
-                PressEnter(desiredKey);
+                Console.ReadKey();
+                Console.WriteLine("Нажмите для продолжения...");
             }
 
-            ResultFight();
-        }
+            ShowResultOfFight();
+        } 
 
-        private void AddWarrior()
+        private void AddWarriors()
         {
             _warriors.Add(new Orc("Азог Завоеватель", 300, 50, 10));
             _warriors.Add(new Knight("Лонселот", 200, 50, 20));
             _warriors.Add(new Wizard("Кадгар", 180, 40, 5, 10, 15));
-            _warriors.Add(new Dwarf("Гимли", 100, 70, 15, 50));
-            _warriors.Add(new Elf("Леголас", 80, 65, 10, 10, 30)); 
+            _warriors.Add(new Dwarf("Гимли", 180, 70, 15, 50));
+            _warriors.Add(new Elf("Леголас", 150, 65, 10, 10, 30)); 
         }
 
         private Warrior SelectWarrior()
@@ -68,7 +67,7 @@ namespace TaskCombat
 
             string userInput;
 
-            ShowFighters(_warriors);
+            ShowFighters();
 
             while (warrior == null)
             {
@@ -99,18 +98,18 @@ namespace TaskCombat
             return warrior;
         }
 
-        private void ShowFighters(List<Warrior> warriors)
+        private void ShowFighters()
         {
-            for (int i = 0; i < warriors.Count; i++)
+            for (int i = 0; i < _warriors.Count; i++)
             {
                 Console.Write($"{i + 1} - ");
-                warriors[i].ShowDescription();
-                warriors[i].ShowStats();
+                _warriors[i].ShowDescription();
+                _warriors[i].ShowStats();
                 Console.WriteLine();
             }
         }
 
-        private void ResultFight()
+        private void ShowResultOfFight()
         {
             if (_firstPlayer.Health > _secondPlayer.Health)
             {
@@ -124,19 +123,6 @@ namespace TaskCombat
             {
                 Console.WriteLine("Ничья");
             }
-        }
-
-        private void PressEnter(ConsoleKey desiredKey)
-        {
-            ConsoleKeyInfo key = Console.ReadKey(true);
-
-            if (key.Key != desiredKey)
-            {
-                Console.WriteLine($"Для продолжение нажмите: {desiredKey}");
-                Console.ReadKey();
-            }
-
-            Console.WriteLine();
         }
     }
 
@@ -157,7 +143,10 @@ namespace TaskCombat
 
         public virtual void TakeDamage(int damage)
         {
-            Health -= damage - Armor;
+            if (damage >= Armor)
+                Health -= damage - Armor;
+            else
+                Armor = 0;
         }
 
         public virtual void Attack(Warrior warrior)
@@ -182,10 +171,11 @@ namespace TaskCombat
 
         public override void Attack(Warrior warrior)
         {
+            int countAttack = 2;
+
             if (_attackCount % _multiplicityOfChances == 0)
             {
-                warrior.TakeDamage(Damage);
-                warrior.TakeDamage(Damage);
+                warrior.TakeDamage(Damage * countAttack);
 
                 Console.WriteLine($"{Name} - нанес двойной урон");
             }
@@ -238,11 +228,11 @@ namespace TaskCombat
         public Wizard(string name, int health, int damage, int armor, int damageAsorption, int attackMagicBall) : base(name, health, damage, armor)
         {
             DamageAbsorption = damageAsorption;
-            AttackMagicBall = attackMagicBall;
+            MagicBallDamage = attackMagicBall;
         }
 
         public int DamageAbsorption { get; private set; }
-        public int AttackMagicBall { get; private set; }
+        public int MagicBallDamage { get; private set; }
 
         public override void TakeDamage(int damage)
         {
@@ -257,9 +247,9 @@ namespace TaskCombat
         {
             if (_takeDamageCount % _multiplicityOfChances == 0)
             {
-                warrior.TakeDamage(Damage + AttackMagicBall);
+                warrior.TakeDamage(Damage + MagicBallDamage);
 
-                Console.WriteLine($"{Name} - нанес удар магическим шаром в +{AttackMagicBall} единиц.");
+                Console.WriteLine($"{Name} - нанес удар магическим шаром в +{MagicBallDamage} единиц.");
             }
             else
             {
@@ -271,7 +261,7 @@ namespace TaskCombat
 
         public override void ShowDescription()
         {
-            Console.WriteLine($"Маг - {Name}: поглащает {DamageAbsorption} единиц урона. Каждый {_multiplicityOfChances} удар наносит магическим шаром {AttackMagicBall} единиц урона.");
+            Console.WriteLine($"Маг - {Name}: поглащает {DamageAbsorption} единиц урона. Каждый {_multiplicityOfChances} удар наносит магическим шаром {MagicBallDamage} единиц урона.");
         }
     }
 
