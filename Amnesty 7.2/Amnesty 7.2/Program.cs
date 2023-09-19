@@ -34,44 +34,15 @@ namespace TaskAmnesty
 
         public void Work()
         {
-            string commandShowToAmnesty = "1";
-            string commandShowCriminalToAmnesty = "2";
-            string commandShowAfterAmnesty = "3";
-            string commandExit = "4";
-            bool isWorking = true;
+            string antiGovernmentCrime = "Антиправительственное";
 
-            while (isWorking)
-            {
-                Console.WriteLine("В стране Арстоцка произошла Амнистия");
-                Console.WriteLine($"\n{commandShowToAmnesty} - Тюрьма до Амнистии;\n{commandShowCriminalToAmnesty} - Тюрьма после Амнистии;\n" + $"{commandShowAfterAmnesty} - Показать Амнистии;\n{commandExit} - Выход");
-                Console.Write("Ввыберете с меню: ");
-                string userInput = Console.ReadLine();
+            Console.WriteLine("\nСписок заключенных до Амнистии: \n");
+            ShowToAmnesty();
 
-                if(userInput == commandShowToAmnesty)
-                {
-                    ShowToAmnesty();
-                }
-                else if(userInput == commandShowCriminalToAmnesty)
-                {
-                    ShowCriminalAfterAmneste();
-                }
-                else if(userInput == commandShowAfterAmnesty)
-                {
-                    ShowAfterAmnesty();
-                }
-                else if(userInput == commandExit)
-                {
-                    Console.WriteLine("Выход из программы");
-                    isWorking = false;
-                }
-                else
-                {
-                    Console.WriteLine("Вы вели что-то не то");
-                }
+            ShowCriminalsAfterAmneste(antiGovernmentCrime);
 
-                Console.ReadKey();
-                Console.Clear();
-            }
+            Console.WriteLine("\nСписок заключенных после амнистии: \n");
+            ShowToAmnesty();
         }
 
         private void ShowToAmnesty()
@@ -82,28 +53,9 @@ namespace TaskAmnesty
             }
         }
 
-        private void ShowCriminalAfterAmneste()   
+        private void ShowCriminalsAfterAmneste(string antiGovernmetnCrime)   
         {
-            string crime = "Антиправительственное";
-
-            var criminalAfterAmnesty = _criminals.Where(criminal => criminal.Crime != crime);
-
-            foreach (Criminal crim in criminalAfterAmnesty)
-            {
-                crim.ShowDetail();
-            }
-        }
-
-        private void ShowAfterAmnesty()  
-        {
-            string crime = "Антиправительственное";
-
-            var afterAmnesty = _criminals.Where(criminal => criminal.Crime == crime);
-
-            foreach (Criminal crim in afterAmnesty)
-            {
-                crim.ShowDetail();
-            }
+            _criminals= _criminals.Where(criminal => criminal.Crime != antiGovernmetnCrime).ToList();
         }
     }
 
