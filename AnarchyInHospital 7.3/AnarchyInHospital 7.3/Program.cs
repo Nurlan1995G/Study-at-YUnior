@@ -48,10 +48,10 @@ namespace AnarchyInHospital
                 switch (userInput)
                 {
                     case "1":
-                        SortToInicialy();
+                        ShowSortToInicialy();
                         break;
                     case "2":
-                        SortToAge();
+                        ShowSortToAge();
                         break;
                     case "3":
                         FindToDiseasePatient();
@@ -67,18 +67,18 @@ namespace AnarchyInHospital
             }
         }
 
-        private void SortToInicialy()
+        private void ShowSortToInicialy()
         {
-            _patients = _patients.OrderBy(patient => patient.Inicialy).ToList();
+            var parientsToInicialy = _patients.OrderBy(patient => patient.Inicialy).ToList();
 
-            ShowPatientsInfo(_patients);
+            ShowInfo(parientsToInicialy);
         }
 
-        private void SortToAge()
+        private void ShowSortToAge()
         {
-            _patients = _patients.OrderBy(patient => patient.Age).ToList();
+            var patientsToAge = _patients.OrderBy(patient => patient.Age).ToList();
 
-            ShowPatientsInfo(_patients);
+            ShowInfo(patientsToAge);
         }
 
         private void FindToDiseasePatient()
@@ -86,13 +86,13 @@ namespace AnarchyInHospital
             Console.Write("Введите заболевание: ");
             string desease = Console.ReadLine();
 
-            _patients = _patients.Where(patient => patient.Desease == desease).ToList();
-            ShowPatientsInfo(_patients);
+            var patientToDisease = _patients.Where(patient => patient.Desease == desease).ToList();
+            ShowInfo(patientToDisease);
         }
 
-        private void ShowPatientsInfo(List<Patient> patients)
+        private void ShowInfo(List<Patient> patients)
         {
-            foreach (Patient patient in _patients)
+            foreach (Patient patient in patients)
             {
                 patient.ShowPacient();
             }
