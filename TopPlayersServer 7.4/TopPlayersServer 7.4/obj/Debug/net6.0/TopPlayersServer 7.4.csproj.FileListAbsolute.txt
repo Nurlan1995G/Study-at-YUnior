@@ -1,0 +1,15 @@
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\bin\Debug\net6.0\TopPlayersServer 7.4.exe
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\bin\Debug\net6.0\TopPlayersServer 7.4.deps.json
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\bin\Debug\net6.0\TopPlayersServer 7.4.runtimeconfig.json
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\bin\Debug\net6.0\TopPlayersServer 7.4.dll
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\bin\Debug\net6.0\TopPlayersServer 7.4.pdb
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\obj\Debug\net6.0\TopPlayersServer 7.4.csproj.AssemblyReference.cache
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\obj\Debug\net6.0\TopPlayersServer 7.4.GeneratedMSBuildEditorConfig.editorconfig
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\obj\Debug\net6.0\TopPlayersServer 7.4.AssemblyInfoInputs.cache
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\obj\Debug\net6.0\TopPlayersServer 7.4.AssemblyInfo.cs
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\obj\Debug\net6.0\TopPlayersServer 7.4.csproj.CoreCompileInputs.cache
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\obj\Debug\net6.0\TopPlayersServer 7.4.dll
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\obj\Debug\net6.0\refint\TopPlayersServer 7.4.dll
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\obj\Debug\net6.0\TopPlayersServer 7.4.pdb
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\obj\Debug\net6.0\TopPlayersServer 7.4.genruntimeconfig.cache
+D:\Unity Ucheba, Game 3d\TopPlayersServer 7.4\TopPlayersServer 7.4\obj\Debug\net6.0\ref\TopPlayersServer 7.4.dll
