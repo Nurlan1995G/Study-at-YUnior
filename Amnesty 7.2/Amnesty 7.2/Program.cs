@@ -39,7 +39,7 @@ namespace TaskAmnesty
             Console.WriteLine("\nСписок заключенных до Амнистии: \n");
             ShowToAmnesty();
 
-            ShowCriminalsAfterAmneste(antiGovernmentCrime);
+            FreeCriminalsAfterAmnesty(antiGovernmentCrime);
 
             Console.WriteLine("\nСписок заключенных после амнистии: \n");
             ShowToAmnesty();
@@ -53,9 +53,9 @@ namespace TaskAmnesty
             }
         }
 
-        private void ShowCriminalsAfterAmneste(string antiGovernmetnCrime)   
+        private void FreeCriminalsAfterAmnesty(string antiGovernmetnCrime)   
         {
-            _criminals= _criminals.Where(criminal => criminal.Crime != antiGovernmetnCrime).ToList();
+            _criminals = _criminals.Where(criminal => criminal.Crime != antiGovernmetnCrime).ToList();
         }
     }
 
