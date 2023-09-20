@@ -39,17 +39,17 @@ namespace TopPlayersServer
             while (isWorking)
             {
                 Console.WriteLine("Ну что по чем, по порядку что ли?");
-                Console.WriteLine("\n1 - Определение 3 игроков по уровню;\n2 - Определение 3 игроков по силе;\n3 - выход\n");
+                Console.WriteLine("\n1 - Показать определение 3 игроков по уровню;\n2 - Показать определение 3 игроков по силе;\n3 - выход\n");
                 Console.Write("Введите номер команды: ");
                 string userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
                     case "1":
-                        FindToLevel();
+                        ShowFindToLevel();
                         break;
                     case "2":
-                        FindToPower();
+                        ShowFindToPower();
                         break;
                     case "3":
                         Console.WriteLine("Выход из программы");
@@ -65,7 +65,7 @@ namespace TopPlayersServer
             }
         }
 
-        private void FindToLevel()
+        private void ShowFindToLevel()
         {
             int topPlayers = 3;
             var playerLevel = _players.OrderByDescending(player => player.Level).Take(topPlayers).ToList();
@@ -73,7 +73,7 @@ namespace TopPlayersServer
             ShowInfo(playerLevel);
         }
 
-        private void FindToPower()
+        private void ShowFindToPower()
         {
             int topPlayers = 3;
             var playerPower = _players.OrderByDescending(player => player.Power).Take(topPlayers).ToList();
