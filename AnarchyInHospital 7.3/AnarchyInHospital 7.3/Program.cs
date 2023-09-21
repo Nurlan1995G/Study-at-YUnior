@@ -35,28 +35,33 @@ namespace AnarchyInHospital
 
         public void Work()
         {
+            const string commandSortToInicialy = "1";
+            const string commandSortToAge = "2";
+            const string commandConclusionToDesease = "3";
+            const string commandExit = "4";
+
             bool isWorking = true;
 
             while (isWorking)
             {
                 Console.WriteLine("Детская больница имени Пирагова №1");
-                Console.WriteLine("\nГлавное меню:\n1 - Отсортировать всех больных по фио;\n2 - Отсортировать всех больных по возрасту;\n" +
-                    "3 - Вывести больных с определенным заболеванием;\n4 - Выход\n");
+                Console.WriteLine($"\nГлавное меню:\n{commandSortToInicialy} - Отсортировать всех больных по фио;\n{commandSortToAge} - Отсортировать всех больных по возрасту;\n" +
+                    $"{commandConclusionToDesease} - Вывести больных с определенным заболеванием;\n{commandExit} - Выход\n");
                 Console.Write("Введите команду: ");
                 string userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
-                    case "1":
+                    case commandSortToInicialy:
                         ShowSortToInicialy();
                         break;
-                    case "2":
+                    case commandSortToAge:
                         ShowSortToAge();
                         break;
-                    case "3":
+                    case commandConclusionToDesease:
                         FindToDiseasePatient();
                         break;
-                    case "4":
+                    case commandExit:
                         Console.WriteLine("Выход из программы");
                         isWorking = false;
                         break;
