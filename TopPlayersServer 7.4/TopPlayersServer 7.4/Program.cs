@@ -34,24 +34,27 @@ namespace TopPlayersServer
 
         public void Work()
         {
+            const string commandShowToLevel = "1";
+            const string commandShowToPower = "2";
+            const string commandExit = "3";
             bool isWorking = true;
 
             while (isWorking)
             {
                 Console.WriteLine("Ну что по чем, по порядку что ли?");
-                Console.WriteLine("\n1 - Показать определение 3 игроков по уровню;\n2 - Показать определение 3 игроков по силе;\n3 - выход\n");
+                Console.WriteLine($"\n{commandShowToLevel} - Показать определение 3 игроков по уровню;\n{commandShowToLevel} - Показать определение 3 игроков по силе;\n{commandExit} - выход\n");
                 Console.Write("Введите номер команды: ");
                 string userInput = Console.ReadLine();
 
                 switch (userInput)
                 {
-                    case "1":
+                    case commandShowToLevel:
                         ShowFindToLevel();
                         break;
-                    case "2":
+                    case commandShowToPower:
                         ShowFindToPower();
                         break;
-                    case "3":
+                    case commandExit:
                         Console.WriteLine("Выход из программы");
                         isWorking = false;
                         break;
